@@ -1,0 +1,52 @@
+@charset "utf-8";
+
+
+
+
+
+/*--------------------------------------------------------------
+## BALLOON AREA
+--------------------------------------------------------------*/
+.balloon-002 {
+display: flex;
+position: relative;
+margin-top: 15px;
+padding: 30px 20px;
+border-radius: 5px;
+background-color: #f4f4f4;
+color: #333333;
+}
+
+.balloon-002::before {
+position: absolute;
+top: -15px;
+width: 30px;
+height: 15px;
+background-color: #f4f4f4;
+clip-path: polygon(50% 0, 0 100%, 100% 100%);
+content: '';
+}
+
+.about div.container div.row.align-items-xl-center.gy-5 div.col-12.content div.row.py-3 div.col-12.col-md-4.mb-3.mb-md-0.aos-init.aos-animate img {
+max-width: 100%;
+height: auto;
+box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+padding: 5px;
+}
+
+
+
+
+
+/*--------------------------------------------------------------
+## VOICE AREA
+--------------------------------------------------------------*/
+.heading01 {
+padding: 0.25em 0.5em 0.28em;
+color: #494949;
+background: transparent;
+border-left: solid 5px #d01919;
+font-size: 18px;
+font-weight: bold;
+}
+

@@ -1,0 +1,54 @@
+@charset "utf-8";
+
+
+
+
+
+
+/*--------------------------------------------------------------
+## NFOMATION AREA
+--------------------------------------------------------------*/
+.date {
+white-space: nowrap;
+margin-right: 16px;
+font-weight: normal;
+}
+
+.category {
+margin-right: 16px;
+padding: 4px 20px 6px;
+background-color: #d01919;
+font-weight: normal;
+color: #FFF;
+font-size: 14px;
+}
+
+.title {
+font-size: 16px;
+}
+
+/* dlにクラスを付ければ（クラス名:first-child）でいける */
+.container dl:first-of-type {
+border-top: 1px solid #ccc;
+}
+.container dl {
+border-bottom: 1px solid #ccc;
+padding: 30px 0px;
+}
+
+.container dl dd {
+overflow: hidden;
+white-space: nowrap;
+text-overflow: ellipsis;
+}
+
+
+
+
+
+
+
+
+
+
+

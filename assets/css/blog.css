@@ -1,0 +1,60 @@
+#d01919@charset "utf-8";
+
+
+
+
+
+
+/*--------------------------------------------------------------
+## BLOG AREA
+--------------------------------------------------------------*/
+.blog a.blog-btn {
+text-align: center;
+text-decoration: none;
+width: 100%;
+margin-top: auto;
+padding: 12px 10px 16px 10px;
+color: #FFF;
+transition: 0.5s;
+background: #d01919;
+border-radius: 6px;
+font-size: 18px;
+}
+
+.blog h5 {
+line-height: 1.2;
+}
+
+.blog p.calegory01 {
+background: #ffbf7f;
+color: #FFF;
+padding: 4px 12px 4px 12px;
+width: fit-content;
+font-size: 14px;
+}
+
+.blog p.calegory02 {
+background: #bf7fff;
+color: #FFF;
+padding: 4px 12px 4px 12px;
+width: fit-content;
+font-size: 14px;
+}
+
+.blog div.card-body.d-flex.flex-column a {
+color: #931212;
+}
+.blog div.card-body.d-flex.flex-column a:hover {
+text-decoration: underline;
+color: #931212;
+}
+
+
+
+
+
+
+
+
+
+

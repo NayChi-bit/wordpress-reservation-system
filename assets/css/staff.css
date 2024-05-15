@@ -1,0 +1,166 @@
+@charset "utf-8";
+
+
+
+
+
+
+/*--------------------------------------------------------------
+## STAFF AREA
+--------------------------------------------------------------*/
+.staff div.staff-area {
+margin-bottom: clamp(3.75rem, 3.068rem + 3.41vw, 5.625rem);
+}
+
+.staff div.staff-area:last-child {
+margin-bottom: 0px;
+}
+
+.staff .content h1 {
+font-weight: 700;
+font-size: 26px;
+}
+
+.staff dt {
+font-weight: 700;
+font-size: 20px;
+margin-bottom: 2px;
+}
+
+.staff dt i {
+color: #d01919;
+}
+
+.staff dd {
+margin-bottom: .5rem;
+margin-left: 0;
+line-height: 1.6;
+}
+
+.staff div.box {
+border-top: 1px solid #CCC;
+border-bottom: 1px solid #CCC;
+padding: 20px 0;
+}
+
+.staff .message {
+padding: 0.25em 0.5em 0.28em;
+color: #494949;
+background: transparent;
+border-left: solid 5px #d01919;
+font-size: 26px;
+font-weight: bold;
+margin-top: 30px;
+margin-bottom: 16px;
+}
+
+.staff p {
+line-height: 1.6;
+}
+
+.staff  a.btn_01 {
+margin-bottom: 30px;
+}
+
+.staff-area  div.staff-img img {
+max-width: 100%;
+height: auto;
+box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+padding: 5px;
+}
+
+.staff div.social {
+margin-top: 12px;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.staff div.social a {
+transition: ease-in-out 0.3s;
+display: flex;
+align-items: center;
+justify-content: center;
+border-radius: 50px;
+width: 32px;
+height: 32px;
+background: rgba(var(--accent-color-rgb), 0.05);
+margin-right: 10px;
+}
+
+.staff div.social a:hover {
+transition: ease-in-out 0.3s;
+display: flex;
+align-items: center;
+justify-content: center;
+border-radius: 50px;
+width: 32px;
+height: 32px;
+background: #d01919;
+margin-right: 10px;
+}
+
+.staff div.social a i {
+color: #d01919;
+font-size: 16px;
+margin: 0 2px;
+}
+
+.staff div.social a i:hover {
+color: #FFF;
+}
+
+
+
+
+
+
+
+/*--------------------------------------------------------------
+## BALLOON AREA
+--------------------------------------------------------------*/
+.balloon-002 {
+display: flex;
+position: relative;
+margin-top: 15px;
+padding: 30px 20px;
+border-radius: 5px;
+background-color: #f4f4f4;
+color: #333333;
+}
+
+.balloon-002::before {
+position: absolute;
+top: -15px;
+width: 30px;
+height: 15px;
+background-color: #f4f4f4;
+clip-path: polygon(50% 0, 0 100%, 100% 100%);
+content: '';
+}
+
+.about div.container div.row.align-items-xl-center.gy-5 div.col-12.content div.row.py-3 div.col-12.col-md-4.mb-3.mb-md-0.aos-init.aos-animate img {
+max-width: 100%;
+height: auto;
+box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+padding: 5px;
+}
+
+.heading01 {
+  padding: 0.25em 0.5em 0.28em;
+  color: #494949;
+  background: transparent;
+  border-left: solid 5px #d01919;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+

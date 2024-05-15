@@ -1,0 +1,133 @@
+@charset "utf-8";
+
+
+
+
+
+
+/*--------------------------------------------------------------
+## PRICE AREA
+--------------------------------------------------------------*/
+.price {
+margin-bottom: -90px;
+}
+
+.price section.price div.container h1 {
+font-size: clamp(1.5rem, 1.364rem + 0.68vw, 1.875rem);
+padding: 0.25em 0.5em;/*上下 左右の余白*/
+background: transparent;/*背景透明に*/
+border-left: solid 5px #d01919;/*左線*/
+}
+
+table {
+border-collapse: collapse;
+}
+
+table th,
+table td {
+padding: 20px;
+box-sizing: border-box;
+line-height: 1.3;
+}
+
+.box {
+margin-bottom: 60px;
+}
+
+.tatemi02 {
+width: 100%;
+}
+@media screen and (max-width: 768px) {
+.tatemi02 {
+border-bottom: 1px solid #DDD;
+}
+}
+
+.tatemi02 th {
+border: 1px solid #DDD;
+background: #fef5f5;
+padding: 20px;
+width: 40%;
+}
+@media screen and (max-width: 768px) {
+.tatemi02 th {
+display: block;
+width: 100%;
+border-bottom: none;
+}
+}
+
+.tatemi02 td {
+border: 1px solid #DDD;
+padding: 20px;
+}
+@media screen and (max-width: 768px) {
+.tatemi02 td {
+display: block;
+border-bottom: none;
+width: 100%;
+}
+}
+
+
+
+
+
+
+
+/*--------------------------------------------------------------
+## パソコン（フルスクリーン）xxl
+--------------------------------------------------------------*/
+@media (min-width: 1400px) {
+
+}
+
+/*--------------------------------------------------------------
+## パソコン xl
+--------------------------------------------------------------*/
+@media (min-width: 1200px) {
+
+}
+
+/*--------------------------------------------------------------
+##　タブレット（横）・パソコン lg
+--------------------------------------------------------------*/
+@media (min-width: 992px) {
+
+}
+
+/*--------------------------------------------------------------
+## スマホ（横）・タブレット（縦） md
+--------------------------------------------------------------*/
+@media (min-width: 768px) {
+
+}
+
+/*--------------------------------------------------------------
+## スマホ（横）sm
+--------------------------------------------------------------*/
+@media (min-width: 576px) {
+
+}
+
+/*--------------------------------------------------------------
+## スマホ（縦）xs
+--------------------------------------------------------------*/
+@media (max-width: 575.98px) {
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
