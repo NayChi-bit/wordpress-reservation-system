@@ -8,9 +8,8 @@ function add_css()
    wp_enqueue_style( 'style');
 	
    wp_register_style('index', get_template_directory_uri() . '/assets/css/index.css', false,'0.1','all');
-   if (!is_page()) {
-      wp_enqueue_style('index');
-   }
+   wp_enqueue_style('index');
+   
 	
    wp_register_style('bootstrap_css', get_template_directory_uri() . '/assets/vendor/bootstrap/css/bootstrap.min.css', false,'0.1','all');
    wp_enqueue_style( 'bootstrap_css');
