@@ -31,7 +31,7 @@
 				<!--  SECTION TITLE -->
 				<div class="section-title" data-aos="fade-up" data-aos-delay="100">
 					<h2 class="mb-3">Campaign List</h2>
-					<h3 class="mb-4">キャンペーン一覧Test</h3>
+					<h3 class="mb-4">キャンペーン一覧Test1</h3>
 					<p>パーソナルトレーニングジム「デジタルワークフォース」では、新春新生活応援キャンペーンを実施中です！</p>
 				</div><!-- END SECTION TITLE -->
 				<!--  BANNER AREA -->
