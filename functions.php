@@ -27,6 +27,8 @@ function add_css()
    } 
 	
 
+   wp_register_style('aos_css', get_template_directory_uri() . '/assets/vendor/aos/aos.css', false,'0.1','all');
+   wp_enqueue_style( 'aos_css');
 }
 
 add_action('wp_enqueue_scripts', 'add_css');
@@ -53,6 +55,9 @@ function add_script()
 	
    wp_register_script('swiper8', 'https://unpkg.com/swiper@8/swiper-bundle.min.js', array ( 'jquery' ), 0.1, true);
    wp_enqueue_script( 'swiper8');
+
+   wp_register_script('aos_js', get_template_directory_uri() . '/assets/vendor/aos/aos.js', array ( 'jquery' ), 0.1, true);
+   wp_enqueue_script( 'aos_js');
 }
 add_action('wp_enqueue_scripts', 'add_script');
 
