@@ -9,7 +9,7 @@
 
 ?>
 <!DOCTYPE html>
-<!-- <html <?php language_attributes(); ?>> -->
+<html <?php language_attributes(); ?>> 
 
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
@@ -34,10 +34,25 @@
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-6dXLPV0m/dsWhg5p9sqR6sDjePbf+o9ALq4x7UMmVl45OVMm+kswT6ZUtZ2BMQ0S6u8A1o5O8r1lK/eAZWx7tg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-	
+	<script>
+		window.addEventListener('scroll', function() {
+			var header = document.getElementById('header');
+			var logoImage = document.querySelector('.logo img');
+			var scrollPosition = window.scrollY;
+
+			// 100px以上スクロールされた場合
+			if(scrollPosition > 100) {
+				// ロゴ画像を別の画像に変更する
+				logoImage.src = '<?php echo get_template_directory_uri(); ?>/assets/images/alternate_logo.png'
+			} else {
+				// スクロールが100px未満の場合は元のロゴ画像を表示する
+				logoImage.src = '<?php echo get_template_directory_uri(); ?>/assets/images/logo.png';
+			}
+		});
+	</script>
 
 </head>
-
+<body class="index-page" data-bs-spy="scroll" data-bs-target="#navmenu">
 <!-- HEADER START -->
 <header id="header" class="header fixed-top d-flex align-items-center">
 	<div class="container-fluid d-flex align-items-center justify-content-between">

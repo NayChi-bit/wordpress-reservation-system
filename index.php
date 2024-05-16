@@ -14,8 +14,7 @@
 
 <?php get_header(); ?>
 
-<section id="primary" class="content-area">
-	<main id="main" class="site-main" role="main">
+
 		<!-- HERO SECTION -->
 		<section id="hero" class="hero">
 			<img src="<?php bloginfo('template_url'); ?>/assets/images/Fitness-Photography-Ideas.jpg" alt="" data-aos="fade-in">
@@ -567,6 +566,5 @@
 
 			endif; ?>
 
-		</main><!-- #main -->
-	</section><!-- #primary -->
 <?php get_footer(); ?>
+</body>

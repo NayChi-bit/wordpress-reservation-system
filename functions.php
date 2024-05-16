@@ -43,6 +43,9 @@ function add_script()
 	
    wp_register_script('swiper', get_template_directory_uri() . '/assets/vendor/swiper/swiper-bundle.min.js', array ( 'jquery' ), 1.1, true);
    wp_enqueue_script( 'swiper');
+	
+   wp_register_script('swiper8', 'https://unpkg.com/swiper@8/swiper-bundle.min.js', array ( 'jquery' ), 1.1, true);
+   wp_enqueue_script( 'swiper8');
 }
 add_action('wp_enqueue_scripts', 'add_script');
 

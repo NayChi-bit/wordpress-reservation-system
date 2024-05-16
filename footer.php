@@ -31,10 +31,10 @@
 						〒220‐0012<br>
 						神奈川県横浜市西区みなとみらい4-4-2<br>
 						横浜ブルーアベニュー5F
-					<div class="mt-4">
-						<strong>Phone:</strong>000-000-0000<br>
-						<strong>From:</strong> info@example.com<br>
-					</div>
+						<div class="mt-4">
+							<strong>Phone:</strong>000-000-0000<br>
+							<strong>From:</strong> info@example.com<br>
+						</div>
 					</p>
 				</div>
 				<div class="col-lg-3 col-md-6 footer-links">
@@ -82,7 +82,47 @@
 		</div>
 	</div>
 </footer><!-- END FOOTER AREA -->
-
 <?php wp_footer(); ?>
+<script>
+	// custom-swiper.js
+	document.addEventListener('DOMContentLoaded', function() {
+		const swiper = new Swiper('.swiper-container', {
+			loop: true,
+			autoplay: {
+				delay: 5000,
+			},
+			pagination: {
+				el: '.swiper-pagination',
+				type: 'bullets',
+				clickable: true,
+			},
+			navigation: {
+				nextEl: '.swiper-button-next',
+				prevEl: '.swiper-button-prev',
+			},
+			scrollbar: {
+				el: '.swiper-scrollbar',
+			},
+			speed: 2000,
+			effect: 'slide',
+			spaceBetween: 20,
+			breakpoints: {
+				// スライドの表示枚数：500px未満の場合
+				768: {
+					slidesPerView: 1,
+				},
+				// スライドの表示枚数：500px以上の場合
+				769: {
+					slidesPerView: 2,
+				},
+			},
+		});
+	});
+
+</script>
+</body>
+
+</html>
+
 
 
