@@ -82,6 +82,10 @@
 		</div>
 	</div>
 </footer><!-- END FOOTER AREA -->
+
+<!-- Scroll Top Button -->
+<a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
 <?php wp_footer(); ?>
 <script>
 	// custom-swiper.js
