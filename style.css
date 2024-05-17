@@ -70,7 +70,7 @@ font-style: normal;
 }
 
 a {
-color: #333;
+color: #333 !important;
 text-decoration: none !important;
 }
 
@@ -83,14 +83,6 @@ text-decoration: none;
 color: #d01919;
 }
 
-
-
-
-
-
-
-
-
 /*--------------------------------------------------------------
 ## 基本ボタンのCSS
 --------------------------------------------------------------*/
@@ -102,7 +94,7 @@ text-decoration: none;
 width: 320px;
 margin: auto;
 padding: 18px 10px 20px 10px;
-color: #FFF;
+color: #FFF !important;
 transition: 0.5s;
 background: #d01919;
 border-radius: 6px;
@@ -112,9 +104,6 @@ a.btn_01:hover {
 color: #fff;
 background: #931212;
 }
-
-
-
 
 .header {
 --background-color: #ffffff;
@@ -177,13 +166,13 @@ order: 3;
 }
 }
 
-
 .index-page .header {
 --background-color: rgba(255, 255, 255, 0);
 --heading-color: #ffffff;
 --nav-color: rgba(255, 255, 255, 0.515);
 --nav-hover-color: #ffffff;
 }
+
 /* Home Page Custom Header on page scroll
 ------------------------------*/
 .index-page.scrolled .header {
@@ -199,10 +188,6 @@ order: 3;
 --nav-hover-color: #e84545;
 box-shadow: 0 0 30px 10px rgba(0, 0, 0, 0.1);
 }
-
-
-
-
 
 /*--------------------------------------------------------------
 # Navigation Menu
@@ -954,7 +939,7 @@ line-height: 2.5rem;
 font-size: clamp(1.875rem, 1.739rem + 0.68vw, 2.25rem);
 }
 
- nav.pan {
+nav.pan {
 background-color: rgba(var(--default-color-rgb), 0.05);
 padding: 20px 0;
 }
@@ -975,7 +960,7 @@ transition: 0.3s;
 }
 
 nav ol li + li {
-  padding-left: 10px;
+padding-left: 10px;
 }
 
 nav ol li + li::before {

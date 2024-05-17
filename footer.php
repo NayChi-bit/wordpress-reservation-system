@@ -87,43 +87,11 @@
 <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
 <?php wp_footer(); ?>
-<script>
-	// custom-swiper.js
-	document.addEventListener('DOMContentLoaded', function() {
-		const swiper = new Swiper('.swiper-container', {
-			loop: true,
-			autoplay: {
-				delay: 5000,
-			},
-			pagination: {
-				el: '.swiper-pagination',
-				type: 'bullets',
-				clickable: true,
-			},
-			navigation: {
-				nextEl: '.swiper-button-next',
-				prevEl: '.swiper-button-prev',
-			},
-			scrollbar: {
-				el: '.swiper-scrollbar',
-			},
-			speed: 2000,
-			effect: 'slide',
-			spaceBetween: 20,
-			breakpoints: {
-				// スライドの表示枚数：500px未満の場合
-				768: {
-					slidesPerView: 1,
-				},
-				// スライドの表示枚数：500px以上の場合
-				769: {
-					slidesPerView: 2,
-				},
-			},
-		});
-	});
+<!-- <script>
+	
 
-</script>
+</script> -->
+
 </body>
 
 </html>
