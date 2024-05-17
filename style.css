@@ -231,7 +231,7 @@ margin-left: 20px;
 border-radius: 6px;
 padding-top: 14px;
 padding-bottom: 14px;
-color: #fff;
+color: #fff !important;
 display: inline-block;
 vertical-align: middle;
 }
@@ -243,7 +243,7 @@ margin-left: 20px;
 border-radius: 6px;
 padding-top: 14px;
 padding-bottom: 14px;
-color: #fff;
+color: #fff !important;
 display: inline-block;
 vertical-align: middle;
 }
