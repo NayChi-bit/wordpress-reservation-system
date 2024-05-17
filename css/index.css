@@ -1,0 +1,677 @@
+@charset "utf-8";
+
+
+
+
+
+/* ------------------------------------------------
+## HERO SECTION　AREA
+------------------------------------------------ */
+.hero {
+position: relative;
+z-index: 3;
+}
+
+h2.hero-ttl01 {
+font-family: "Inter Tight", sans-serif;
+font-size: 70px;
+font-weight: 600;
+font-style: normal;
+}
+
+.hero {
+--default-color: #ffffff;
+--default-color-rgb: 255, 255, 255;
+--background-color: #000000;
+--background-color-rgb: 0, 0, 0;
+width: 100%;
+min-height: 100vh;
+position: relative;
+padding: 160px 0 80px 0;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.hero img {
+position: absolute;
+inset: 0;
+display: block;
+width: 100%;
+height: 100%;
+-o-object-fit: cover;
+object-fit: cover;
+z-index: 1;
+}
+
+.hero:before {
+content: "";
+background: rgba(var(--background-color-rgb), 0.5);
+position: absolute;
+inset: 0;
+z-index: 2;
+}
+
+.hero .container {
+position: relative;
+z-index: 3;
+}
+
+.hero p {
+color: rgba(var(--default-color-rgb), 0.8);
+margin: 5px 0 0 0;
+font-size: 20px;
+}
+
+
+
+
+
+/* ------------------------------------------------
+## BANNER AREA
+------------------------------------------------ */
+.swiper-container {
+position: relative;
+}
+
+.swiper-pagination {
+position: absolute;
+bottom: -40px !important;
+}
+
+.swiper-button-prev {
+position: absolute;
+left: -40px !important;
+color: #d01919;
+}
+@media (max-width: 576px) {
+.swiper-button-prev {
+position: absolute;
+left: -40px !important;
+color: #d01919;
+display: none;
+}
+}
+
+.swiper-button-next {
+position: absolute;
+right: -40px !important;
+color: #d01919;
+}
+@media (max-width: 576px) {
+.swiper-button-next {
+position: absolute;
+right: -40px !important;
+color: #d01919;
+display: none;
+}
+}
+
+.swiper {
+max-width: 100%;
+}
+
+.swiper-wrappar {
+height: auto;
+}
+
+.swiper-slide {
+height: auto;
+}
+
+.swiper-slide img {
+width: 100%;
+height: 100%;
+}
+
+.swiper-pagination-bullet-active {
+opacity: var(--swiper-pagination-bullet-opacity, 1);
+background-color:  #d01919;
+}
+
+
+
+
+
+/*--------------------------------------------------------------
+## NFOMATION AREA
+--------------------------------------------------------------*/
+.date {
+white-space: nowrap;
+margin-right: 16px;
+font-weight: normal;
+}
+
+.category {
+margin-right: 16px;
+padding: 4px 20px 6px;
+background-color: #d01919;
+font-weight: normal;
+color: #FFF;
+font-size: 14px;
+}
+
+.title {
+font-size: 16px;
+}
+
+/* dlにクラスを付ければ（クラス名:first-child）でいける */
+.container dl:first-of-type {
+border-top: 1px solid #ccc;
+}
+.container dl {
+border-bottom: 1px solid #ccc;
+padding: 30px 0px;
+}
+
+.container dl dd {
+overflow: hidden;
+white-space: nowrap;
+text-overflow: ellipsis;
+}
+
+
+
+
+
+
+/*--------------------------------------------------------------
+## ABOUT US AREA
+--------------------------------------------------------------*/
+.about {
+  --background-color: #f4f4f4;
+}
+
+.about .content h2 {
+font-weight: 700;
+line-height: 2.5rem;
+}
+
+.about img {
+max-width: 100%;
+height: auto;
+box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+padding: 5px;
+}
+
+.content div.section-title h3 {
+display: inline-block;
+font-size: 16px;
+font-weight: 500;
+line-height: 19px;
+padding: 10px 20px;
+background: rgba(var(--accent-color-rgb), 0.05);
+color: var(--accent-color);
+border-radius: 7px;
+margin-left: 13px;
+}
+/*--------------------------------------------------------------
+## スマホ（横）・タブレット（縦） md
+--------------------------------------------------------------*/
+@media (max-width: 767px) {
+
+.content div.section-title h3 {
+display: inline-block;
+font-size: 16px;
+font-weight: 500;
+line-height: 19px;
+padding: 10px 20px;
+background: rgba(var(--accent-color-rgb), 0.05);
+color: var(--accent-color);
+border-radius: 7px;
+margin-left: 0px;
+}
+}
+
+
+
+
+
+
+
+
+/*--------------------------------------------------------------
+## SERVICES AREA
+--------------------------------------------------------------*/
+.price {
+background-color: #f4f4f4;
+}
+
+.services .service-item .title {
+font-weight: 700;
+margin-bottom: 15px;
+font-size: 18px;
+line-height: 1.5rem;
+}
+
+.services .service-item .title a {
+color: var(--heading-color);
+}
+
+.services .service-item .title a:hover {
+color: var(--accent-color);
+}
+
+.services .service-item .icon {
+width: 250px;
+height: auto;
+position: relative;
+margin-right: 30px;
+line-height: 0;
+margin-bottom: 12px;
+}
+@media (max-width: 767px) {
+.services .service-item .icon {
+width: 100%;
+height: auto;
+position: relative;
+margin-right: 30px;
+line-height: 0;
+margin-bottom: 20px;
+}
+}
+
+.services .service-item .icon i {
+color: rgba(var(--default-color-rgb), 0.7);
+font-size: 56px;
+transition: ease-in-out 0.3s;
+z-index: 2;
+position: relative;
+}
+
+.services .service-item .icon::before {
+position: absolute;
+content: "";
+height: 40px;
+width: 40px;
+background: rgba(var(--accent-color-rgb), 0.3);
+border-radius: 50px;
+z-index: 1;
+bottom: -18px;
+right: -23px;
+transition: 0.3s;
+}
+@media (max-width: 767px) {
+.services .service-item .icon::before {
+position: absolute;
+content: "";
+height: 40px;
+width: 40px;
+background: rgba(var(--accent-color-rgb), 0.3);
+border-radius: 50px;
+z-index: 1;
+bottom: -18px;
+right: -6px;
+transition: 0.3s;
+}
+}
+
+
+
+
+
+/*--------------------------------------------------------------
+## PREICE AREA
+--------------------------------------------------------------*/
+div.icon-box.first-time {
+background-color: #d01919;
+color: #FFF;
+}
+
+.price .content h2 {
+font-weight: 700;
+line-height: 2.5rem;
+}
+
+.price .content div.section-title h3 {
+display: inline-block;
+font-size: 16px;
+font-weight: 500;
+line-height: 19px;
+padding: 10px 20px;
+background: rgba(var(--accent-color-rgb), 0.05);
+color: var(--accent-color);
+border-radius: 7px;
+margin-left: 55px;
+}
+/*--------------------------------------------------------------
+## スマホ（横）・タブレット（縦） md
+--------------------------------------------------------------*/
+@media (max-width: 767px) {
+.price .content div.section-title h3 {
+display: inline-block;
+font-size: 16px;
+font-weight: 500;
+line-height: 19px;
+padding: 10px 20px;
+background: rgba(var(--accent-color-rgb), 0.05);
+color: var(--accent-color);
+border-radius: 7px;
+margin-left: 0;
+}
+}
+
+div.icon-box h3 {
+margin-bottom: 10px;
+font-size: 32px;
+font-weight: 700;
+color: #d01919;
+}
+
+div.icon-box.first-time div.icon-item h3 {
+color: #FFF;
+}
+
+div.icon-box div.icon-item i.bi.bi-person-plus-fill:hover {
+background-color: #d01919;
+color: #FFF;
+}
+
+div.icon-box.first-time i {
+width: 80px;
+height: 80px;
+border-radius: 50%;
+display: inline-flex;
+align-items: center;
+justify-content: center;
+margin-bottom: 24px;
+font-size: 32px;
+line-height: 0;
+transition: all 0.4s ease-out 0s;
+background-color: #FFF;
+color: #e84545;
+}
+
+div.icon-box i {
+width: 80px;
+height: 80px;
+border-radius: 50%;
+display: inline-flex;
+align-items: center;
+justify-content: center;
+margin-bottom: 24px;
+font-size: 32px;
+line-height: 0;
+transition: all 0.4s ease-out 0s;
+background-color: #d01919;
+color: #FFF;
+}
+
+div.icon-box {
+padding: 50px 24px;
+box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+border-radius: 4px;
+transition: all 0.3s ease-out 0s;
+background-color: #fff;
+}
+
+div.icon-box div.icon-item {
+position: relative;
+}
+
+div.icon-box div.icon-item p {
+font-size: 24px;
+font-weight: 700;
+position: absolute;
+top: 19px;
+left: 97px;
+}
+
+
+
+
+
+
+/*--------------------------------------------------------------
+## STAFF AREA
+--------------------------------------------------------------*/
+.staff .member {
+position: relative;
+box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+padding: 42px 30px 30px;
+border-radius: 5px;
+background: #fff;
+transition: 0.5s;
+height: 100%;
+}
+
+.staff .pic {
+overflow: hidden;
+width: 180px;
+}
+@media (max-width: 767px) {
+.staff .pic {
+overflow: hidden;
+width: 100%;
+margin-bottom: 20px;
+}
+}
+
+.staff .member .member-info {
+padding-left: 30px;
+}
+@media (max-width: 767px) {
+.staff .member .member-info {
+padding-left: 0px;
+}
+}
+
+.staff .member h4 {
+font-weight: 700;
+margin-bottom: 5px;
+font-size: 20px;
+}
+
+.staff .member p {
+margin: 10px 0 0 0;
+font-size: 16px;
+text-align: justify;
+}
+
+.member-info p a {
+text-decoration: underline;
+}
+
+.staff .member .social {
+margin-top: 12px;
+display: flex;
+align-items: center;
+justify-content: flex-start;
+}
+
+.staff .member .social a {
+transition: ease-in-out 0.3s;
+display: flex;
+align-items: center;
+justify-content: center;
+border-radius: 50px;
+width: 32px;
+height: 32px;
+background: rgba(var(--accent-color-rgb), 0.05);
+margin-right: 10px;
+}
+
+.staff .member .social a:hover {
+transition: ease-in-out 0.3s;
+display: flex;
+align-items: center;
+justify-content: center;
+border-radius: 50px;
+width: 32px;
+height: 32px;
+background: #d01919;
+margin-right: 10px;
+}
+
+.staff .member .social a i {
+color: #d01919;
+font-size: 16px;
+margin: 0 2px;
+}
+
+.staff .member .social a i:hover {
+color: #FFF;
+}
+
+.txt-limit {
+overflow: hidden;
+display: -webkit-box;
+-webkit-box-orient: vertical;
+-webkit-line-clamp: 3; /* 任意の行数を指定 */
+}
+
+
+
+
+
+
+/*--------------------------------------------------------------
+## FAQ AREA
+--------------------------------------------------------------*/
+.faq {
+background-color: #f4f4f4;
+}
+.faq .content h3 {
+font-weight: 400;
+font-size: 34px;
+}
+
+.faq .content p {
+font-size: 15px;
+color: rgba(var(--default-color-rgb), 0.7);
+}
+
+.faq .faq-container .faq-item {
+position: relative;
+padding: 30px 60px 30px 30px;
+margin-bottom: 20px;
+box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+overflow: hidden;
+background-color: #fff;
+border-radius: 4px;
+}
+
+.faq .faq-container .faq-item:last-child {
+margin-bottom: 0;
+}
+
+.faq .faq-container .faq-item h3 {
+font-weight: 600;
+font-size: 18px;
+line-height: 24px;
+margin: 0 30px 0 0;
+transition: 0.3s;
+cursor: pointer;
+display: flex;
+align-items: flex-start;
+}
+
+.faq .faq-container .faq-item h3 .num {
+color: var(--accent-color);
+padding-right: 5px;
+}
+
+.faq .faq-container .faq-item h3:hover {
+color: var(--accent-color);
+}
+
+.faq .faq-container .faq-item .faq-content {
+display: grid;
+grid-template-rows: 0fr;
+transition: 0.3s ease-in-out;
+visibility: hidden;
+opacity: 0;
+}
+
+.faq .faq-container .faq-item .faq-content p {
+margin-bottom: 0;
+overflow: hidden;
+}
+
+.faq .faq-container .faq-item .faq-toggle {
+position: absolute;
+top: 36px;
+right: 20px;
+font-size: 20px;
+line-height: 0;
+transition: 0.3s;
+cursor: pointer;
+color: #000;
+}
+
+.faq .faq-container .faq-item .faq-toggle:hover {
+color: var(--accent-color);
+}
+
+.faq .faq-container .faq-active h3 {
+color: var(--accent-color);
+}
+
+.faq .faq-container .faq-active .faq-content {
+grid-template-rows: 1fr;
+visibility: visible;
+opacity: 1;
+padding-top: 10px;
+}
+
+.faq .faq-container .faq-active .faq-toggle {
+transform: rotate(90deg);
+color: var(--accent-color);
+}
+
+
+
+
+
+
+/*--------------------------------------------------------------
+## BLOG AREA
+--------------------------------------------------------------*/
+.blog a.blog-btn {
+text-align: center;
+text-decoration: none;
+width: 100%;
+margin-top: auto;
+padding: 12px 10px 16px 10px;
+color: #FFF;
+transition: 0.5s;
+background: #d01919;
+border-radius: 6px;
+font-size: 18px;
+}
+
+.blog h5 {
+line-height: 1.5;
+font-weight: 600;
+}
+
+.blog p.calegory01 {
+background: #ffbf7f;
+color: #FFF;
+padding: 4px 12px 4px 12px;
+width: fit-content;
+font-size: 14px;
+}
+
+.blog p.calegory02 {
+background: #bf7fff;
+color: #FFF;
+padding: 4px 12px 4px 12px;
+width: fit-content;
+font-size: 14px;
+}
+
+.blog div.card-body.d-flex.flex-column a {
+color: #931212;
+}
+.blog div.card-body.d-flex.flex-column a:hover {
+text-decoration: underline;
+color: #931212;
+}
+
+.blog div.card div.card-body.d-flex.flex-column p {
+display: -webkit-box;
+-webkit-box-orient: vertical;
+-webkit-line-clamp: 3;
+overflow: hidden;
+}

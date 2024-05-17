@@ -70,8 +70,8 @@ font-style: normal;
 }
 
 a {
-color: #333 !important;
-text-decoration: none !important;
+color: #333;
+text-decoration: none;
 }
 
 a:hover {
@@ -94,7 +94,7 @@ text-decoration: none;
 width: 320px;
 margin: auto;
 padding: 18px 10px 20px 10px;
-color: #FFF !important;
+color: #FFF;
 transition: 0.5s;
 background: #d01919;
 border-radius: 6px;
@@ -231,7 +231,7 @@ margin-left: 20px;
 border-radius: 6px;
 padding-top: 14px;
 padding-bottom: 14px;
-color: #fff !important;
+color: #fff;
 display: inline-block;
 vertical-align: middle;
 }
@@ -243,7 +243,7 @@ margin-left: 20px;
 border-radius: 6px;
 padding-top: 14px;
 padding-bottom: 14px;
-color: #fff !important;
+color: #fff;
 display: inline-block;
 vertical-align: middle;
 }

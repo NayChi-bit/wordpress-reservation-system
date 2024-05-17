@@ -1,8 +1,8 @@
 <?php
-/*
-Template Name: Service Page Template
-*/
-get_header();
+/*************************************
+サービステンプレートファイル
+**************************************/
+	get_header();
 ?>
 
 <section id="primary" class="content-area">

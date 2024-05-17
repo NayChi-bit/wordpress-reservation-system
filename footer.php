@@ -1,11 +1,7 @@
 <?php
-/**
- * The template for displaying the footer.
- *
- * Contains all content after the main content area and sidebar
- *
- * @package Poseidon
- */
+/******************************************
+ * フッターファイル
+ ******************************************/
 
 ?>
 <!-- FOOTER AREA -->
@@ -87,10 +83,6 @@
 <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
 <?php wp_footer(); ?>
-<!-- <script>
-	
-
-</script> -->
 
 </body>
 
