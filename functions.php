@@ -40,6 +40,11 @@
       if (is_page('price')) {
          wp_enqueue_style( 'price');
       } 
+	  
+	  wp_register_style('about', get_template_directory_uri() . '/css/about.css', false,'0.1','all');
+      if (is_page('about')) {
+         wp_enqueue_style( 'about');
+      }
    }
 
    add_action('wp_enqueue_scripts', 'add_css');
