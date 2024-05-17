@@ -1,6 +1,7 @@
 <?php
 /*********************************
 About ページ
+Template Name: About Page Template
 *********************************/
 	get_header();
 ?>
