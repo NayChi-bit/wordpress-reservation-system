@@ -33,7 +33,7 @@
 		<nav id="navmenu" class="navmenu">
 			<ul>
 				<li><a href="index.html">Home</a></li>
-				<li><a href="about.html">About Us</a></li>
+				<li><a href="<?php bloginfo('template_url'); ?>/about">About Us</a></li>
 				<li><a href="<?php bloginfo('template_url'); ?>/services">Services</a></li>
 				<li><a href="<?php bloginfo('template_url'); ?>/price">Price List</a></li>
 				<li class="dropdown has-dropdown"><a href="staff.html"><span>Gim Staff</span> <i class="bi bi-chevron-down"></i></a>

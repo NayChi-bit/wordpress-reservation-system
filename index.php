@@ -101,7 +101,7 @@
 				<h2 class="mt-3">結果にコミットする、パーソナルトレーニング</h2>
 				<p class="mt-3 mb-3">EASYWORKER FITは、横浜にあるパーソナルトレーニングジムです。</p>
 				<p>EASYWORKER FITは「身体が変われば心が変わる。心が変われば身体が変わる。」という理念に基づき、お客様一人ひとりに寄り添ったトレーニング指導を行っております。</p>
-				<p class="mt-5 text-center text-md-start"><a href="#" class="btn_01">EASYWORKER FITの詳細へ</a></p>
+				<p class="mt-5 text-center text-md-start"><a href="<?php bloginfo('template_url'); ?>/about" class="btn_01">EASYWORKER FITの詳細へ</a></p>
 			</div>
 
 			<div class="col-xl-7">
