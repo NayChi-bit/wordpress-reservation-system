@@ -200,7 +200,7 @@
 			</div><!-- End Service Item -->
 		</div>
 		<div class="text-center" data-aos="zoom-in" data-aos-delay="800" >
-			<p class="mt-5"><a href="#" class="btn_01">SERVICEの詳細へ</a></p>
+			<p class="mt-5"><a href="<?php bloginfo('template_url'); ?>/services" class="btn_01">SERVICEの詳細へ</a></p>
 		</div>
 	</div>
 </section><!-- END SERVICES AREA -->
@@ -219,7 +219,7 @@
 				</div><!-- END SECTION TITLE -->
 				<h2 class="mt-3">手ごろな料金でプロのアドバイス。トレーニングをより効果的に。</h2>
 				<p class="mt-3">手軽な価格でパーソナライズドなトレーニングを受けませんか？当ジムではあなただけのプランを提供し、目標に合わせて最適な結果を得ることができます。費用対効果の高さが魅力です。</p>
-				<p class="mt-5 text-center text-md-start"><a href="#" class="btn_01">PRICE LISTの詳細へ</a></p>
+				<p class="mt-5 text-center text-md-start"><a href="<?php bloginfo('template_url'); ?>/price"  class="btn_01">PRICE LISTの詳細へ</a></p>
 			</div>
 
 			<div class="col-xl-7">
