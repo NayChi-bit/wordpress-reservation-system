@@ -2,7 +2,7 @@
 /********************************
  * ホームページテンプレートファイル
  ********************************/
-	get_header('index');
+	get_header();
 ?>
 
 <body class="index-page" data-bs-spy="scroll" data-bs-target="#navmenu">

@@ -42,14 +42,20 @@
       } 
 
       wp_register_style('price', get_template_directory_uri() . '/css/price.css', false,'0.1','all');
-      // if (is_page('price')) {
+      if (is_page('price')) {
          wp_enqueue_style( 'price');
-      // } 
+      } 
 	  
-	  wp_register_style('about', get_template_directory_uri() . '/css/about.css', false,'0.1','all');
+	   wp_register_style('about', get_template_directory_uri() . '/css/about.css', false,'0.1','all');
       if (is_page('about')) {
          wp_enqueue_style( 'about');
       }
+
+      wp_register_style('information', get_template_directory_uri() . 'css/information.css', false,'0.1','all');
+      if (is_page('information')) {
+         wp_enqueue_style( 'information');
+      } 
+
    }
 
    add_action('wp_enqueue_scripts', 'add_css');
