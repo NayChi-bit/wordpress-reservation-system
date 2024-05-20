@@ -38,8 +38,8 @@
 					<ul>
 						<li><i class="bx bx-chevron-right"></i> <a href="index.html">Home</a></li>
 						<li><i class="bx bx-chevron-right"></i> <a href="about.html">About us</a></li>
-						<li><i class="bx bx-chevron-right"></i> <a href="services.html">Services</a></li>
-						<li><i class="bx bx-chevron-right"></i> <a href="price.html">Price List</a></li>
+						<li><i class="bx bx-chevron-right"></i> <a href="<?php bloginfo('template_url'); ?>/services">Services</a></li>
+						<li><i class="bx bx-chevron-right"></i> <a href="<?php bloginfo('template_url'); ?>/price">Price List</a></li>
 						<li><i class="bx bx-chevron-right"></i> <a href="staff.html">Gim Staff</a></li>
 					</ul>
 				</div>

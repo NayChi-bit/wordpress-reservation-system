@@ -6,6 +6,7 @@
     get_header();
 ?>
 
+<body class="price" data-bs-spy="scroll" data-bs-target="#navmenu">
 
 <!-- PAN AREA -->
 <nav class="pan" data-aos="fade-up" data-aos-delay="100">
@@ -181,7 +182,7 @@
 			<div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
 				<div class="carender text-center">
 					<h4>Booking Carender</h4>
-					<img src="images/images02.png" class="img-fluid"/> </div>
+					<img src="<?php bloginfo('template_url'); ?>/assets/images/images02.png" class="img-fluid"/> </div>
 			</div>
 
 		</div>

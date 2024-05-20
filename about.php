@@ -5,6 +5,8 @@ Template Name: About Page Template
 *********************************/
 	get_header();
 ?>
+<body class="about" data-bs-spy="scroll" data-bs-target="#navmenu">
+
 <section id="primary" class="content-area">
 	<main id="main" class="site-main" role="main">
 

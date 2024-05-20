@@ -2,13 +2,15 @@
 /******************************
  * Functionファイル
  ******************************/
+   function add_custom_favicons() {
+      echo '<!-- Favicons -->
+      <link href="' . get_template_directory_uri() . '/assets/images/favicon.png" rel="icon">
+      <link href="' . get_template_directory_uri() . '/assets/images/apple-touch-icon.png" rel="apple-touch-icon">';
+   }
+   add_action('wp_head', 'add_custom_favicons');
 
    function add_css()
-
    {
-      //Favicons
-
-
       // Vendor CSS ファイル
       wp_register_style('bootstrap_css', get_template_directory_uri() . '/assets/vendor/bootstrap/css/bootstrap.min.css', false,'0.1','all');
       wp_enqueue_style( 'bootstrap_css');
@@ -21,6 +23,9 @@
       
       wp_register_style('aos_css', get_template_directory_uri() . '/assets/vendor/aos/aos.css', false,'0.1','all');
       wp_enqueue_style( 'aos_css');
+
+      wp_register_style('font_awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css', array(),'6.5.1','all');
+      wp_enqueue_style( 'font_awesome');
 
       // CSS ファイル
       wp_register_style('style', get_template_directory_uri() . '/style.css', false,'0.1','all');
@@ -37,9 +42,9 @@
       } 
 
       wp_register_style('price', get_template_directory_uri() . '/css/price.css', false,'0.1','all');
-      if (is_page('price')) {
+      // if (is_page('price')) {
          wp_enqueue_style( 'price');
-      } 
+      // } 
 	  
 	  wp_register_style('about', get_template_directory_uri() . '/css/about.css', false,'0.1','all');
       if (is_page('about')) {

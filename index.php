@@ -2,9 +2,11 @@
 /********************************
  * ホームページテンプレートファイル
  ********************************/
-get_header();
+	get_header('index');
 ?>
 
+<body class="index-page" data-bs-spy="scroll" data-bs-target="#navmenu">
+	
 <!-- HERO SECTION -->
 <section id="hero" class="hero">
 	<img src="<?php bloginfo('template_url'); ?>/assets/images/Fitness-Photography-Ideas.jpg" alt="" data-aos="fade-in">
