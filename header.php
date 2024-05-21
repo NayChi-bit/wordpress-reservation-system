@@ -56,7 +56,7 @@
 		<!-- NAV MENU AREA -->
 		<nav id="navmenu" class="navmenu">
 			<ul>
-				<li><a href="index.html">Home</a></li>
+				<li><a href="<?php echo home_url(); ?>">Home</a></li>
 				<li><a href="<?php echo get_permalink(get_page_by_path('about')->ID); ?>">About Us</a></li>
 				<li><a href="<?php echo get_permalink(get_page_by_path('services')->ID); ?>">Services</a></li>
 				<li><a href="<?php echo get_permalink(get_page_by_path('price')->ID); ?>">Price List</a></li>
