@@ -46,7 +46,7 @@
 				<div class="col-lg-3 col-md-6 footer-links">
 					<h4>Our Services</h4>
 					<ul>
-						<li><i class="bx bx-chevron-right"></i> <a href="infomation.html">Infomation</a></li>
+						<li><i class="bx bx-chevron-right"></i> <a href="<?php bloginfo('template_url'); ?>/information">Infomation</a></li>
 						<li><i class="bx bx-chevron-right"></i> <a href="blog.html">Blog</a></li>
 						<li><i class="bx bx-chevron-right"></i> <a href="#">Contact</a></li>
 						<li><i class="bx bx-chevron-right"></i> <a href="sitemap.html">sitmap</a></li>

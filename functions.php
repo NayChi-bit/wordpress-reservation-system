@@ -2,6 +2,7 @@
 /******************************
  * Functionファイル
  ******************************/
+   // Favicons
    function add_custom_favicons() {
       echo '<!-- Favicons -->
       <link href="' . get_template_directory_uri() . '/assets/images/favicon.png" rel="icon">
@@ -9,6 +10,7 @@
    }
    add_action('wp_head', 'add_custom_favicons');
 
+   // CSS 
    function add_css()
    {
       // Vendor CSS ファイル
@@ -32,9 +34,9 @@
       wp_enqueue_style( 'style');
       
       wp_register_style('index', get_template_directory_uri() . '/css/index.css', false,'0.1','all');
-      if (!is_page()) {
-         wp_enqueue_style( 'index');
-      }
+      if (is_front_page()) { // Load on the homepage only
+         wp_enqueue_style('index');
+     }
 
       wp_register_style('services', get_template_directory_uri() . '/css/services.css', false,'0.1','all');
       if (is_page('services')) {
@@ -51,7 +53,7 @@
          wp_enqueue_style( 'aboutus');
       }
 
-      wp_register_style('information', get_template_directory_uri() . 'css/information.css', false,'0.1','all');
+      wp_register_style('information', get_template_directory_uri() . '/css/information.css', false,'0.1','all');
       if (is_page('information')) {
          wp_enqueue_style( 'information');
       } 
@@ -61,10 +63,25 @@
          wp_enqueue_style( 'privacy');
       } 
 
+      if (is_single()) {
+         $post_categories = get_the_category();
+         foreach ($post_categories as $category) {
+            
+             if ($category->slug === 'information') {
+                 wp_enqueue_style('single-information', get_template_directory_uri() . '/css/information-post.css', array(), '0.1', 'all');
+             } elseif ($category->slug === 'other-category') {
+                
+                 wp_enqueue_style('other-category', get_template_directory_uri() . '/css/other-category.css', array(), '1.0', 'all');
+             }
+             
+         }
+     }
+
    }
 
    add_action('wp_enqueue_scripts', 'add_css');
 
+   // Javascript
    function add_script()
    {
       // Vendor JS ファイル
@@ -97,4 +114,24 @@
    }
 
    add_action('wp_enqueue_scripts', 'add_script');
+
+   // Post Template
+   function load_single_template($template) {
+      global $post;
+  
+      if (in_category('information', $post)) {
+          $new_template = locate_template(array('single-information.php'));
+  
+          if ('' != $new_template) {
+              return $new_template;
+          }
+      }
+  
+      return $template;
+  }
+  
+  add_filter('single_template', 'load_single_template');
+  
+  add_theme_support('post-thumbnails', array('post', 'page'));
+
 ?>

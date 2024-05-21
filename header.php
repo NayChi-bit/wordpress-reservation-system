@@ -38,15 +38,15 @@
 
 </head>
 
-<!-- HEADER START -->
-<?php
-	if(!is_page()){
-		echo '<header id="header" class="header fixed-top d-flex align-items-center">';
-	}
-	else{
-		echo '<header id="header" class="header sticky-top d-flex align-items-center">';
-	}
-?>
+	<!-- HEADER START -->
+	<?php
+		if(is_front_page()){
+			echo '<header id="header" class="header fixed-top d-flex align-items-center">';
+		}
+		else{
+			echo '<header id="header" class="header sticky-top d-flex align-items-center">';
+		}
+	?>
 
 	<div class="container-fluid d-flex align-items-center justify-content-between">
 		<a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
@@ -57,9 +57,9 @@
 		<nav id="navmenu" class="navmenu">
 			<ul>
 				<li><a href="index.html">Home</a></li>
-				<li><a href="<?php bloginfo('template_url'); ?>/about">About Us</a></li>
-				<li><a href="<?php bloginfo('template_url'); ?>/services">Services</a></li>
-				<li><a href="<?php bloginfo('template_url'); ?>/price">Price List</a></li>
+				<li><a href="<?php echo get_permalink(get_page_by_path('about')->ID); ?>">About Us</a></li>
+				<li><a href="<?php echo get_permalink(get_page_by_path('services')->ID); ?>">Services</a></li>
+				<li><a href="<?php echo get_permalink(get_page_by_path('price')->ID); ?>">Price List</a></li>
 				<li class="dropdown has-dropdown"><a href="staff.html"><span>Gim Staff</span> <i class="bi bi-chevron-down"></i></a>
 					<ul class="dd-box-shadow">
 						<li><a href="#">田中&nbsp;太郎</a></li>
@@ -68,8 +68,8 @@
 						<li><a href="#">伊藤&nbsp;真理</a></li>
 					</ul>
 				</li>
-				<li><a href="faq.html">FAQ</a></li>
-				<li><a href="infomation.html">Infomation</a></li>
+				<li><a href="<?php bloginfo('template_url'); ?>/">FAQ</a></li>
+				<li><a href="<?php echo get_permalink(get_page_by_path('information')->ID); ?>">Information</a></li>
 				<li><a href="blog.html">Blog</a></li>
 				<li><a href="#">Contact</a></li>
 				<li class="carender"><a href="#"><i class="bi bi-calendar-check-fill"></i>&nbsp;BOOKING CARENDAR</a></li>
