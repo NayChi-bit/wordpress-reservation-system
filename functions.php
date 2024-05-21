@@ -55,6 +55,11 @@
       if (is_page('information')) {
          wp_enqueue_style( 'information');
       } 
+	  
+	  wp_register_style('privacy', get_template_directory_uri() . 'css/privacy.css', false,'0.1','all');
+      if (is_page('privacy')) {
+         wp_enqueue_style( 'privacy');
+      } 
 
    }
 
