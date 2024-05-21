@@ -46,9 +46,9 @@
          wp_enqueue_style( 'price');
       } 
 	  
-	   wp_register_style('about', get_template_directory_uri() . '/css/about.css', false,'0.1','all');
+	   wp_register_style('aboutus', get_template_directory_uri() . '/css/about.css', false,'0.1','all');
       if (is_page('about')) {
-         wp_enqueue_style( 'about');
+         wp_enqueue_style( 'aboutus');
       }
 
       wp_register_style('information', get_template_directory_uri() . 'css/information.css', false,'0.1','all');
