@@ -130,8 +130,45 @@
       return $template;
   }
   
+  //各投稿ページ追加
   add_filter('single_template', 'load_single_template');
   
+  // 投稿イメージ
   add_theme_support('post-thumbnails', array('post', 'page'));
+
+  // ページネーショ
+  function custom_pagination($args = array()) {
+      $defaults = array(
+         'prev_text' => '<i class="fa fa-angle-left"></i>',
+         'next_text' => '<i class="fa fa-angle-right"></i>',
+         'type' => 'array',
+      );
+
+      $args = wp_parse_args($args, $defaults);
+
+      // Get the pagination links as an array
+      $links = paginate_links($args);
+
+      if ($links) {
+         // Start the pagination HTML
+         $pagination = '<ul class="pagination d-flex justify-content-center flex-wrap pagination-flat pagination-success">';
+
+         foreach ($links as $link) {
+            // Add custom classes
+            if (strpos($link, 'current') !== false) {
+                  $pagination .= '<li class="page-item active">' . str_replace('page-numbers', 'page-link', $link) . '</li>';
+            } else {
+                  $pagination .= '<li class="page-item">' . str_replace('page-numbers', 'page-link', $link) . '</li>';
+            }
+         }
+
+         // Close the pagination HTML
+         $pagination .= '</ul>';
+
+         return $pagination;
+      }
+
+      return '';
+   }
 
 ?>

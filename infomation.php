@@ -29,50 +29,50 @@
             <p>EASYWORKER FITの最新情報を発信しております。</p>
         </div><!-- END SECTION TITLE -->
 
-
         <div class="container">
 
             <div data-aos="fade-up" data-aos-delay="200">
-                <?php
-                    $information_query = new WP_Query(array(
-                        'post_type' => 'post',
-                        'category_name' => 'information' 
-                    ));
+            <?php
+                $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+                $information_query = new WP_Query(array(
+                    'post_type' => 'post',
+                    'category_name' => 'Information',
+                    'posts_per_page' => 5,
+                    'paged' => $paged 
+                ));
 
-                    if ($information_query->have_posts()) :
-                        while ($information_query->have_posts()) : $information_query->the_post();
-                    ?>
-                            <!-- <div class="information-item">
-                                <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-                                <div class="excerpt"><?php the_excerpt(); ?></div>
-                            </div> -->
-                            <dl class="d-md-flex align-items-center">
-                                <dt class="d-md-flex align-items-center">
-                                    <span class="date"><?php echo get_the_date('Y年m月d日'); ?></span>
-                                    <span class="category">INFORMATION</span>
-                                </dt>
-                                <dd class="mb-0 mt-3 mt-md-0"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></dd>
-                            </dl>
-                    <?php
-                        endwhile;
-                    endif;
-                    wp_reset_postdata();
-                ?>
-            </div>
-
+                if ($information_query->have_posts()) :
+                    while ($information_query->have_posts()) : $information_query->the_post();
+            ?>
+                    <dl class="d-md-flex align-items-center">
+                        <dt class="d-md-flex align-items-center">
+                            <span class="date"><?php echo get_the_date('Y年m月d日'); ?></span>
+                            <span class="category">INFORMATION</span>
+                        </dt>
+                        <dd class="mb-0 mt-3 mt-md-0"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></dd>
+                    </dl>
+            <?php
+                    endwhile;
+            ?>
+                   
             <div class="d-flex justify-content-center mt-4" data-aos="fade-up" data-aos-delay="300">
                 <nav>
-                    <ul class="pagination d-flex justify-content-center flex-wrap pagination-flat pagination-success">
-                        <li class="page-item"><a class="page-link" href="#" data-abc="true"><i class="fa fa-angle-left"></i></a></li>
-                        <li class="page-item active"><a class="page-link" href="#" data-abc="true">1</a></li>
-                        <li class="page-item"><a class="page-link" href="#" data-abc="true">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#" data-abc="true">3</a></li>
-                        <li class="page-item"><a class="page-link" href="#" data-abc="true">4</a></li>
-                        <li class="page-item"><a class="page-link" href="#" data-abc="true"><i class="fa fa-angle-right"></i></a></li>
-                    </ul>
+                    <?php
+                        echo custom_pagination(array(
+                            'total' => $information_query->max_num_pages,
+                            'prev_text' => '<i class="fa fa-angle-left"></i>',
+                            'next_text' => '<i class="fa fa-angle-right"></i>',
+                        ));
+                    ?>
                 </nav>
             </div>
+            <?php
+                    wp_reset_postdata();
+                endif;
+                // error_log('Pagination List : ' . $information_query->post_count)
+            ?>
 
+            </div>
         </div>
     </section><!-- END SITEMAP AREA -->
 
