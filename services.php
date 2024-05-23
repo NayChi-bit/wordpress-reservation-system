@@ -12,7 +12,7 @@ Template Name: Service Page Template
 	<nav class="pan" data-aos="fade-up" data-aos-delay="100">
 		<div class="container">
 			<ol>
-				<li><a href="<?php bloginfo('template_url'); ?>/index">Home</a></li>
+				<li><a href="<?php echo home_url(); ?>">Home</a></li>
 				<li class="current">Services</li>
 			</ol>
 		</div>
