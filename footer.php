@@ -37,17 +37,17 @@
 					<h4>Our Services</h4>
 					<ul>
 						<li><i class="bx bx-chevron-right"></i> <a href="<?php echo home_url(); ?>">Home</a></li>
-						<li><i class="bx bx-chevron-right"></i> <a href="<?php bloginfo('template_url'); ?>/about">About us</a></li>
-						<li><i class="bx bx-chevron-right"></i> <a href="<?php bloginfo('template_url'); ?>/services">Services</a></li>
-						<li><i class="bx bx-chevron-right"></i> <a href="<?php bloginfo('template_url'); ?>/price">Price List</a></li>
-						<li><i class="bx bx-chevron-right"></i> <a href="staff.html">Gim Staff</a></li>
+						<li><i class="bx bx-chevron-right"></i> <a href="<?php echo get_permalink(get_page_by_path('about')->ID); ?>">About us</a></li>
+						<li><i class="bx bx-chevron-right"></i> <a href="<?php echo get_permalink(get_page_by_path('services')->ID); ?>">Services</a></li>
+						<li><i class="bx bx-chevron-right"></i> <a href="<?php echo get_permalink(get_page_by_path('price')->ID); ?>">Price List</a></li>
+						<li><i class="bx bx-chevron-right"></i> <a href="<?php echo get_permalink(get_page_by_path('staff')->ID); ?>">Gim Staff</a></li>
 					</ul>
 				</div>
 				<div class="col-lg-3 col-md-6 footer-links">
 					<h4>Our Services</h4>
 					<ul>
-						<li><i class="bx bx-chevron-right"></i> <a href="<?php bloginfo('template_url'); ?>/information">Infomation</a></li>
-						<li><i class="bx bx-chevron-right"></i> <a href="blog.html">Blog</a></li>
+						<li><i class="bx bx-chevron-right"></i> <a href="<?php echo get_permalink(get_page_by_path('information')->ID); ?>">Infomation</a></li>
+						<li><i class="bx bx-chevron-right"></i> <a href="<?php echo get_permalink(get_page_by_path('blog')->ID); ?>">Blog</a></li>
 						<li><i class="bx bx-chevron-right"></i> <a href="#">Contact</a></li>
 						<li><i class="bx bx-chevron-right"></i> <a href="sitemap.html">sitmap</a></li>
 						<li><i class="bx bx-chevron-right"></i> <a href="privacy.html">Privacy policy</a></li>

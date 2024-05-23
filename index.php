@@ -51,13 +51,13 @@
 
 		<!--  SECTION TITLE -->
 		<div class="section-title" data-aos="fade-up" data-aos-delay="100">
-			<h2 class="mb-3">Infomation</h2>
+			<h2 class="mb-3">Information</h2>
 			<h3 class="mb-4">インフォメーション</h3>
 			<p>私たちは、あなたの目標達成を強力にサポートするために、常に最新の情報と確かな知識をお届けします。</p>
 		</div><!-- END SECTION TITLE -->
 
 		<div data-aos="fade-up" data-aos-delay="200">
-			<dl class="d-md-flex align-items-center">
+			<!-- <dl class="d-md-flex align-items-center">
 				<dt class="d-md-flex align-items-center">
 					<span class="date">2024年08月30日</span>
 					<span class="category">INFOMATION</span>
@@ -79,7 +79,31 @@
 					<span class="category">INFOMATION</span>
 				</dt>
 				<dd class="mb-0 mt-3 mt-md-0"><a href="#">【体験談】パーソナルジムに通ってみた！料金や効果、メリット・デメリットを徹底解説</a></dd>
-			</dl>
+			</dl> -->
+			<?php
+                $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+                $information_query = new WP_Query(array(
+                    'post_type' => 'post',
+                    'category_name' => 'Information',
+                    'posts_per_page' => 5,
+                    'paged' => $paged 
+                ));
+
+                if ($information_query->have_posts()) :
+                    while ($information_query->have_posts()) : $information_query->the_post();
+            ?>
+                    <dl class="d-md-flex align-items-center">
+                        <dt class="d-md-flex align-items-center">
+                            <span class="date"><?php echo get_the_date('Y年m月d日'); ?></span>
+                            <span class="category">INFORMATION</span>
+                        </dt>
+                        <dd class="mb-0 mt-3 mt-md-0"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></dd>
+                    </dl>
+            <?php
+                    endwhile;  
+					wp_reset_postdata();
+                endif;
+            ?>
 		</div>
 
 		<div class="text-center" data-aos="zoom-in" data-aos-delay="600" >

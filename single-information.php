@@ -1,8 +1,4 @@
 <?php
-/****************************************
- * Information投稿カテゴリーファイル
- * Template Name: Information Post Template
- ****************************************/
 get_header();
 ?>
 
@@ -86,18 +82,16 @@ get_header();
 				</div>
 
                 <div class="col-lg-2 side-area" data-aos="fade-up" data-aos-delay="300">
-                <h1>Archive</h1>
-                <h2><?php echo date('Y'); ?>年</h2>
-                <ul>
-                    <?php wp_get_archives(array('type' => 'monthly', 'limit' => 12, 'show_post_count' => true)); ?>
-                </ul>
-                <h2 class="mt-4"><?php echo date('Y', strtotime('-1 year')); ?>年</h2>
-                <ul>
-                    <?php wp_get_archives(array('type' => 'monthly', 'limit' => 12, 'show_post_count' => true, 'year' => date('Y', strtotime('-1 year')))); ?>
-                </ul>
-            </div>
-
-            
+                    <h1>Archive</h1>
+                    <h2><?php echo date('Y'); ?>年</h2>
+                    <ul>
+                        <?php wp_get_archives(array('type' => 'monthly', 'limit' => 12, 'show_post_count' => true)); ?>
+                    </ul>
+                    <h2 class="mt-4"><?php echo date('Y', strtotime('-1 year')); ?>年</h2>
+                    <ul>
+                        <?php wp_get_archives(array('type' => 'monthly', 'limit' => 12, 'show_post_count' => true, 'year' => date('Y', strtotime('-1 year')))); ?>
+                    </ul>
+                </div>          
 			</div>
 		</div>
 

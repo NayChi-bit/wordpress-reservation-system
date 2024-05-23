@@ -58,9 +58,24 @@
          wp_enqueue_style( 'information');
       } 
 	  
-	  wp_register_style('privacy', get_template_directory_uri() . 'css/privacy.css', false,'0.1','all');
+	   wp_register_style('privacy', get_template_directory_uri() . 'css/privacy.css', false,'0.1','all');
       if (is_page('privacy')) {
          wp_enqueue_style( 'privacy');
+      } 
+
+      wp_register_style('faq', get_template_directory_uri() . '/css/faq.css', false,'0.1','all');
+      if (is_page('faq')) {
+         wp_enqueue_style( 'faq');
+      } 
+
+      wp_register_style('staff', get_template_directory_uri() . '/css/staff.css', false,'0.1','all');
+      if (is_page('staff')) {
+         wp_enqueue_style( 'staff');
+      } 
+
+      wp_register_style('blog', get_template_directory_uri() . '/css/blog.css', false,'0.1','all');
+      if (is_page('blog')) {
+         wp_enqueue_style( 'blog');
       } 
 
       if (is_single()) {
@@ -126,6 +141,14 @@
               return $new_template;
           }
       }
+
+      if (in_category('blog', $post)) {
+         $new_template = locate_template(array('single-blog.php'));
+ 
+         if ('' != $new_template) {
+             return $new_template;
+         }
+     }
   
       return $template;
   }

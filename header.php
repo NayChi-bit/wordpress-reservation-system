@@ -60,7 +60,7 @@
 				<li><a href="<?php echo get_permalink(get_page_by_path('about')->ID); ?>">About Us</a></li>
 				<li><a href="<?php echo get_permalink(get_page_by_path('services')->ID); ?>">Services</a></li>
 				<li><a href="<?php echo get_permalink(get_page_by_path('price')->ID); ?>">Price List</a></li>
-				<li class="dropdown has-dropdown"><a href="staff.html"><span>Gim Staff</span> <i class="bi bi-chevron-down"></i></a>
+				<li class="dropdown has-dropdown"><a href="<?php echo get_permalink(get_page_by_path('staff')->ID); ?>"><span>Gim Staff</span> <i class="bi bi-chevron-down"></i></a>
 					<ul class="dd-box-shadow">
 						<li><a href="#">田中&nbsp;太郎</a></li>
 						<li><a href="#">佐藤&nbsp;健太</a></li>
@@ -68,9 +68,9 @@
 						<li><a href="#">伊藤&nbsp;真理</a></li>
 					</ul>
 				</li>
-				<li><a href="<?php bloginfo('template_url'); ?>/">FAQ</a></li>
+				<li><a href="<?php echo get_permalink(get_page_by_path('faq')->ID); ?>">FAQ</a></li>
 				<li><a href="<?php echo get_permalink(get_page_by_path('information')->ID); ?>">Information</a></li>
-				<li><a href="blog.html">Blog</a></li>
+				<li><a href="<?php echo get_permalink(get_page_by_path('blog')->ID); ?>">Blog</a></li>
 				<li><a href="#">Contact</a></li>
 				<li class="carender"><a href="#"><i class="bi bi-calendar-check-fill"></i>&nbsp;BOOKING CARENDAR</a></li>
 			</ul>
