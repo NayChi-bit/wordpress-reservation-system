@@ -87,16 +87,15 @@
          $post_categories = get_the_category();
          foreach ($post_categories as $category) {
             
-             if ($category->slug === 'information') {
-                 wp_enqueue_style('single-information', get_template_directory_uri() . '/css/information-post.css', array(), '0.1', 'all');
-             } elseif ($category->slug === 'other-category') {
-                
-                 wp_enqueue_style('other-category', get_template_directory_uri() . '/css/other-category.css', array(), '1.0', 'all');
-             }
+            if ($category->slug === 'information') {
+               wp_enqueue_style('single-information', get_template_directory_uri() . '/css/information-post.css', array(), '0.1', 'all');
+            } 
+            if ($category->slug === 'blog') {
+               wp_enqueue_style('single-blog', get_template_directory_uri() . '/css/blog-details.css', array(), '0.1', 'all');
+           } 
              
          }
      }
-
    }
 
    add_action('wp_enqueue_scripts', 'add_css');

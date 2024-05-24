@@ -52,7 +52,7 @@ get_header();
                                 <div class="card-body d-flex flex-column">
                                     
                                     <?php
-                                        $categories = get_the_category();
+                                        $categories = get_the_category(get_the_ID());
                                         if (!empty($categories)) {
                                             foreach ($categories as $category) {
                                                 if ($category->category_parent != 0) {
@@ -60,7 +60,7 @@ get_header();
                                     ?>
                                                         <p class="calegory01 mb-2">
                                     <?php
-                                                         echo $category->name;
+                                                        echo $category->name;
                                     ?>
                                                         </p>
                                     <?php
