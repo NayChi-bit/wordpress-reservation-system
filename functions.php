@@ -78,6 +78,11 @@
          wp_enqueue_style( 'blog');
       } 
 
+      wp_register_style('sitemap', get_template_directory_uri() . '/css/sitemap.css', false,'0.1','all');
+      if (is_page('sitemap')) {
+         wp_enqueue_style( 'sitemap');
+      } 
+
       if (is_single()) {
          $post_categories = get_the_category();
          foreach ($post_categories as $category) {

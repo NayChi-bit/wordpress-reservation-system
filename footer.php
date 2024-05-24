@@ -49,7 +49,7 @@
 						<li><i class="bx bx-chevron-right"></i> <a href="<?php echo get_permalink(get_page_by_path('information')->ID); ?>">Infomation</a></li>
 						<li><i class="bx bx-chevron-right"></i> <a href="<?php echo get_permalink(get_page_by_path('blog')->ID); ?>">Blog</a></li>
 						<li><i class="bx bx-chevron-right"></i> <a href="#">Contact</a></li>
-						<li><i class="bx bx-chevron-right"></i> <a href="sitemap.html">sitmap</a></li>
+						<li><i class="bx bx-chevron-right"></i> <a href="<?php echo get_permalink(get_page_by_path('sitemap')->ID); ?>">sitemap</a></li>
 						<li><i class="bx bx-chevron-right"></i> <a href="privacy.html">Privacy policy</a></li>
 					</ul>
 				</div>
