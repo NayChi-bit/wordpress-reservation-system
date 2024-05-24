@@ -50,7 +50,7 @@
 						<li><i class="bx bx-chevron-right"></i> <a href="<?php echo get_permalink(get_page_by_path('blog')->ID); ?>">Blog</a></li>
 						<li><i class="bx bx-chevron-right"></i> <a href="#">Contact</a></li>
 						<li><i class="bx bx-chevron-right"></i> <a href="<?php echo get_permalink(get_page_by_path('sitemap')->ID); ?>">Sitemap</a></li>
-						<li><i class="bx bx-chevron-right"></i> <a href="privacy.html">Privacy policy</a></li>
+						<li><i class="bx bx-chevron-right"></i> <a href="<?php echo get_permalink(get_page_by_path('privacy')->ID); ?>">Privacy policy</a></li>
 					</ul>
 				</div>
 				<div class="col-lg-3 col-md-6 footer-links">
