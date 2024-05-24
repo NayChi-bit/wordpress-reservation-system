@@ -31,166 +31,42 @@ Template Name: Service Page Template
 		<div class="container">
 			<div class="row gy-4">
 
+			<?php
+				$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+				$service_query = new WP_Query(array(
+					'post_type' => 'post',
+					'category_name' => 'Services'
+				));
+
+				if ($service_query->have_posts()) :
+					while ($service_query->have_posts()) : $service_query->the_post();
+			?>
 				<div class="col-lg-12 " data-aos="fade-up" data-aos-delay="100">
 					<div class="service-item d-md-flex d-block">
-						<div class="icon flex-shrink-0"><img src="<?php bloginfo('template_url'); ?>/assets/images/5.jpg" class="img-fluid"/></div>
+						<div class="icon flex-shrink-0">
+						<?php if (has_post_thumbnail()) : ?>
+                            <?php the_post_thumbnail('full', ['class' => 'img-fluid']); ?>
+                    	<?php endif; ?>
+						</div>
 
 						<div class="card mb-4">
 							<div class="card-body p-3">
 								<div class="custom-scrollbar-css p-2">
-									<h4 class="title">美ボディメイク：しなやかで美しいボディラインを目指す</h4>
-									<p class="description mb-3">ただ細いだけではない、しなやかで美しいボディラインを手に入れたい方へ、当ジムの美ボディメイクプログラムをご紹介します。</p>
-									<p>無理なダイエットや高負荷の筋トレは一切行いません。お客様一人ひとりの体質や目標に合わせた、オーダーメイドのトレーニングプログラムを提供することで、健康的に理想のボディを追求します。</p>
-									<dl>
-										<dt class="mt-3 fs-5">●&nbsp;主なプログラム内容</dt>
-										<dd>・体幹トレーニング: 身体の軸を鍛え、姿勢改善や代謝アップ</dd>
-										<dd>・筋力トレーニング: 女性らしい曲線を作るための筋肉を重点的に鍛える</dd>
-										<dd>・ストレッチ: 柔軟性を高め、関節の可動域を広げる</dd>
-										<dd>・食事指導: 栄養バランスのとれた食事習慣の指導</dd>
-									</dl>
-									<p>経験豊富なトレーナーが、お客様のフォームや体調を見ながら丁寧に指導いたします。また、定期的なカウンセリングで目標達成度を確認しながら、プログラムを調整していきます。無料体験も実施しておりますので、お気軽にお問い合わせください。
-										一緒に理想のボディラインを目指しましょう！</p>
+									<h4 class="title"><?php the_title(); ?></h4>
+									<?php the_content(); ?>
 								</div>
 							</div>
 						</div>
 
 					</div>
 				</div><!-- End Service Item -->
-
-				<div class="col-lg-12" data-aos="fade-up" data-aos-delay="200">
-					<div class="service-item d-md-flex d-block">
-						<div class="icon flex-shrink-0"><img src="<?php bloginfo('template_url'); ?>/assets/images/7.jpg" class="img-fluid"/></div>
-
-						<div class="card mb-4">
-							<div class="card-body p-3">
-								<div class="custom-scrollbar-css p-2">
-									<h4 class="title">筋力アップ：力強く引き締まった身体を目指す</h4>
-									<p class="description mb-3">「もっと力強く、引き締まった身体になりたい！」**そんな方へ、当ジムの筋力アッププログラムをご紹介します。</p>
-									<p>初心者の方からアスリートまで、レベルに合わせたトレーニングを提供いたします。お客様一人ひとりの目標に合わせた、オーダーメイドのトレーニングプログラムで、効率的に筋力アップをサポートします。</p>
-									<dl>
-										<dt class="mt-3 fs-5">●&nbsp;主なプログラム内容</dt>
-										<dd>・三大筋群トレーニング: 胸、背中、脚の大きな筋肉を鍛え、基礎代謝アップ</dd>
-										<dd>・体幹トレーニング: 身体の軸を鍛え、パフォーマンス向上</dd>
-										<dd>・筋力トレーニング: 目的部位に合わせたトレーニング</dd>
-										<dd>・有酸素運動: 脂肪燃焼を促進</dd>
-									</dl>
-									<p>トレーニング中のフォームや体調を細かくチェックし、怪我のリスクを最小限に抑えながら、効率的に目標達成をサポートします。定期的なカウンセリングでは、トレーニングの進捗状況や目標達成度を確認し、必要に応じてプログラムを調整していきます。</p>
-								</div>
-							</div>
-						</div>
-
-					</div>
-				</div><!-- End Service Item -->
-
-				<div class="col-lg-12" data-aos="fade-up" data-aos-delay="300">
-					<div class="service-item d-md-flex d-block">
-						<div class="icon flex-shrink-0"><img src="<?php bloginfo('template_url'); ?>/assets/images/9.jpg" class="img-fluid"/></div>
-
-						<div class="card mb-4">
-							<div class="card-body p-3">
-								<div class="custom-scrollbar-css p-2">
-									<h4 class="title">ダイエット：脂肪燃焼と引き締めを同時に目指す</h4>
-									<p class="description mb-3">「痩せたいけど、筋肉も落とさずに引き締めたい！」そんな方へ、当ジムのダイエットプログラムをご紹介します。</p>
-									<p>無理な食事制限や高負荷の運動は一切行いません。**お客様一人ひとりの体質や目標に合わせた、オーダーメイドのプログラムで、健康的に脂肪燃焼と引き締めを同時に目指します</p>
-									<dl>
-										<dt class="mt-3 fs-5">●&nbsp;主なプログラム内容</dt>
-										<dd>・有酸素運動: 脂肪燃焼を促進</dd>
-										<dd>・筋力トレーニング: 基礎代謝を上げ、脂肪燃焼しやすい体を作る</dd>
-										<dd>・食事指導: 栄養バランスのとれた食事習慣の指導</dd>
-										<dd>・ストレッチ: 柔軟性を高め、関節の可動域を広げる</dd>
-									</dl>
-									<p>経験豊富なトレーナーが、お客様の体調や体質を見ながら丁寧に指導いたします。また、定期的なカウンセリングで目標達成度を確認しながら、プログラムを調整していきます。</p>
-								</div>
-							</div>
-						</div>
-
-					</div>
-				</div><!-- End Service Item -->
-
-				<div class="col-lg-12" data-aos="fade-up" data-aos-delay="400">
-					<div class="service-item d-md-flex d-block">
-						<div class="icon flex-shrink-0"><img src="<?php bloginfo('template_url'); ?>/assets/images/8.jpg" class="img-fluid"/></div>
-
-						<div class="card mb-4">
-							<div class="card-body p-3">
-								<div class="custom-scrollbar-css p-2">
-									<h4 class="title">健康増進：体力向上と健康的な身体を目指す</h4>
-									<p class="description mb-3">「もっと元気に過ごしたい！」「もっと健康的な身体になりたい！」そんな方へ、当ジムの健康増進プログラムをご紹介します。</p>
-									<p>運動不足や体力低下にお悩みの方でも、安心して取り組めるプログラムをご用意しております。お客様一人ひとりの体力や目標に合わせた、オーダーメイドのプログラムで、無理なく健康的な身体を目指します。</p>
-									<dl>
-										<dt class="mt-3 fs-5">●&nbsp;主なプログラム内容</dt>
-										<dd>・有酸素運動: 心肺機能を高め、体力向上</dd>
-										<dd>・筋力トレーニング: 筋力アップと基礎代謝向上</dd>
-										<dd>・ストレッチ: 柔軟性を高め、関節の可動域を広げる</dd>
-										<dd>・バランスボール: 体幹トレーニング</dd>
-										<dd>・ヨガ: 心身のリラックス</dd>
-									</dl>
-									<p>経験豊富なトレーナーが、お客様一人ひとりの体調や体質を丁寧にカウンセリングし、最適なトレーニングプログラムを作成します。</p>
-								</div>
-							</div>
-						</div>
-
-					</div>
-				</div><!-- End Service Item -->
-
-				<div class="col-lg-12" data-aos="fade-up" data-aos-delay="500">
-					<div class="service-item d-md-flex d-block">
-						<div class="icon flex-shrink-0"><img src="<?php bloginfo('template_url'); ?>/assets/images/10.jpg" class="img-fluid"/></div>
-
-						<div class="card mb-4">
-							<div class="card-body p-3">
-								<div class="custom-scrollbar-css p-2">
-									<h4 class="title">健康増進：体力向上と健康的な身体を目指す</h4>
-									<p class="description mb-3">「年齢とともに運動不足が気になる」「安全に運動を楽しみたい」そんなシニアの方へ、当ジムのシニア向けプログラムをご紹介します。</p>
-									<p>無理のない運動で、体力維持・筋力アップ・転倒予防を目指します。</p>
-									<dl>
-										<dt class="mt-3 fs-5">●&nbsp;主なプログラム内容</dt>
-										<dd>・有酸素運動: 軽いウォーキング、エアロビクスなど</dd>
-										<dd>・筋力トレーニング: 体重負荷トレーニング、ゴムバンドを使ったトレーニングなど</dd>
-										<dd>・バランスボール: 体幹トレーニング</dd>
-										<dd>・ストレッチ: 柔軟性を高め、関節の可動域を広げる</dd>
-										<dd>・ヨガ: 心身のリラックス</dd>
-									</dl>
-									<p>経験豊富なシニア専門トレーナーが、お客様一人ひとりの体力や体調に合わせたプログラムを作成します。</p>
-								</div>
-							</div>
-						</div>
-
-					</div>
-				</div><!-- End Service Item -->
-
-				<div class="col-lg-12" data-aos="fade-up" data-aos-delay="600">
-					<div class="service-item d-md-flex d-block">
-						<div class="icon flex-shrink-0"><img src="<?php bloginfo('template_url'); ?>/assets/images/11.jpg" class="img-fluid"/></div>
-
-						<div class="card mb-4">
-							<div class="card-body p-3">
-								<div class="custom-scrollbar-css p-2">
-									<h4 class="title">食事管理：食べながら痩せられるおすすめの食事メニューも紹介</h4>
-									<p class="description mb-3">「無理な食事制限はしたくないけど、健康的に痩せたい！」**そんな方へ、当ジムの食事管理プログラムをご紹介します。</p>
-									<p>栄養バランスの良い食事を心がけることで、無理なく脂肪燃焼を促進し、理想の体型を目指します。</p>
-									<dl>
-										<dt class="mt-3 fs-5">●&nbsp;主なポイント</dt>
-										<dd>・PFCバランス:タンパク質、脂質、炭水化物のバランスを意識</dd>
-										<dd>・野菜をたっぷり: ビタミン、ミネラル、食物繊維を豊富に摂取</dd>
-										<dd>・ゆっくりよく噛む: 満腹感を得やすく、消化吸収を促進</dd>
-										<dd>・間食は控えめに: 必要に応じて、ナッツやヨーグルト</dd>
-										<dd>・ヨガ: 心身のリラックス</dd>
-									</dl>
-									<dl>
-										<dt class="mt-3 fs-5">●&nbsp;おすすめの食事メニュー</dt>
-										<dd>・鶏むね肉のソテー 野菜たっぷりスープ添え</dd>
-										<dd>・鮭の塩焼き 玄米ご飯、味噌汁</dd>
-										<dd>・豆腐ハンバーグ 野菜サラダ</dd>
-										<dd>・納豆ご飯 オクラのおひたし</dd>
-									</dl>
-									<p>経験豊富な栄養士が、お客様の目標や体質に合わせた食事指導を行います。また、定期的なカウンセリングで食事内容を見直し、目標達成をサポートします。</p>
-								</div>
-							</div>
-						</div>
-
-					</div>
-				</div><!-- End Service Item -->
+				<?php
+                    endwhile;
+            	?>
+			<?php
+                wp_reset_postdata();
+            	endif;
+            ?>
 
 			</div>
 		</div>
