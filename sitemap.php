@@ -33,19 +33,19 @@ Template Name: Sitemap Page Template
         <div class="container">
             <dl class="border-bottom">
                 <dt class="fs-4 mb-3">Home</dt>
-                <dd class="mb-5"><a href="index.html">EASYWORKER FITのトップページになります。</a></dd>
+                <dd class="mb-5"><a href="<?php echo home_url(); ?>">EASYWORKER FITのトップページになります。</a></dd>
             </dl>
             <dl class="mt-5 border-bottom">
                 <dt class="fs-4 mb-4">About Us</dt>
-                <dd class="mb-5"><a href="about.html">EASYWORKER FITとはどのような会社なのか、理念や目指していることなどを記載しています。</a></dd>
+                <dd class="mb-5"><a href="<?php echo get_permalink(get_page_by_path('about')->ID); ?>">EASYWORKER FITとはどのような会社なのか、理念や目指していることなどを記載しています。</a></dd>
             </dl>
             <dl class="mt-5 border-bottom">
                 <dt class="fs-4 mb-3">Services</dt>
-                <dd class="mb-5"><a href="services.html">EASYWORKER FITが提供しているサービスの内容を説明しています。</a></dd>
+                <dd class="mb-5"><a href="<?php echo get_permalink(get_page_by_path('services')->ID); ?>">EASYWORKER FITが提供しているサービスの内容を説明しています。</a></dd>
             </dl>
             <dl class="mt-5 border-bottom">
                 <dt class="fs-4 mb-3">Price List</dt>
-                <dd class="mb-5"><a href="price.html">EASYWORKER FITのサービスごとの料金表を掲載しています。</a></dd>
+                <dd class="mb-5"><a href="<?php echo get_permalink(get_page_by_path('price')->ID); ?>">EASYWORKER FITのサービスごとの料金表を掲載しています。</a></dd>
             </dl>
             <dl class="mt-5 border-bottom">
                 <dt class="fs-4 mb-3">Gim Staff</dt>
@@ -69,7 +69,7 @@ Template Name: Sitemap Page Template
             </dl>
             <dl class="mt-5 border-bottom">
                 <dt class="fs-4 mb-3">Sitmap</dt>
-                <dd class="mb-5"><a href="sitemap.html">サイトマップへのリンクを掲載しています。</a></dd>
+                <dd class="mb-5"><a href="<?php echo get_permalink(get_page_by_path('sitemap')->ID); ?>">サイトマップへのリンクを掲載しています。</a></dd>
             </dl>
             <dl class="mt-5 border-bottom">
                 <dt class="fs-4 mb-3">Privacy policy</dt>
