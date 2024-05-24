@@ -58,10 +58,10 @@
          wp_enqueue_style( 'information');
       } 
 	  
-	   wp_register_style('privacy', get_template_directory_uri() . 'css/privacy.css', false,'0.1','all');
+	  wp_register_style('privacy', get_template_directory_uri() . '/css/privacy.css', false,'0.1','all');
       if (is_page('privacy')) {
          wp_enqueue_style( 'privacy');
-      } 
+      }
 
       wp_register_style('faq', get_template_directory_uri() . '/css/faq.css', false,'0.1','all');
       if (is_page('faq')) {
