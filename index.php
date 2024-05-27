@@ -439,7 +439,7 @@
 		</div>
 
 		<div class="text-center" data-aos="zoom-in" data-aos-delay="400">
-			<p class="mt-5"><a href="#" class="btn_01">FAQの一覧へ</a></p>
+			<p class="mt-5"><a href="<?php bloginfo('template_url'); ?>/faq"  class="btn_01">FAQの一覧へ</a></p>
 		</div>
 
 	</div>
@@ -507,7 +507,7 @@
 			</div>
 
 			<div class="text-center" data-aos="zoom-in" data-aos-delay="400">
-				<p class="mt-5"><a href="#" class="btn_01">Blog一覧へ</a></p>
+				<p class="mt-5"><a href="<?php bloginfo('template_url'); ?>/blog"  class="btn_01">Blog一覧へ</a></p>
 			</div>
 
 		</div>
