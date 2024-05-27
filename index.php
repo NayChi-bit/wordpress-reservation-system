@@ -57,29 +57,6 @@
 		</div><!-- END SECTION TITLE -->
 
 		<div data-aos="fade-up" data-aos-delay="200">
-			<!-- <dl class="d-md-flex align-items-center">
-				<dt class="d-md-flex align-items-center">
-					<span class="date">2024年08月30日</span>
-					<span class="category">INFOMATION</span>
-				</dt>
-				<dd class="mb-0 mt-3 mt-md-0"><a href="information-post.html">【初心者向け】パーソナルジムって？自分に合った								ジムの見つけ方</a></dd>
-			</dl>
-
-			<dl class="d-md-flex align-items-center">
-				<dt class="d-md-flex align-items-center">
-					<span class="date">2024年08月30日</span>
-					<span class="category">INFOMATION</span>
-				</dt>
-				<dd class="mb-0 mt-3 mt-md-0"><a href="#">【目的別】ダイエット、筋トレ、ボディメイク…パーソナルトレーニングで叶える理想の身体</a></dd>
-			</dl>
-
-			<dl class="d-md-flex align-items-center">
-				<dt class="d-md-flex align-items-center">
-					<span class="date">2024年08月30日</span>
-					<span class="category">INFOMATION</span>
-				</dt>
-				<dd class="mb-0 mt-3 mt-md-0"><a href="#">【体験談】パーソナルジムに通ってみた！料金や効果、メリット・デメリットを徹底解説</a></dd>
-			</dl> -->
 			<?php
                 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
                 $information_query = new WP_Query(array(
@@ -107,7 +84,7 @@
 		</div>
 
 		<div class="text-center" data-aos="zoom-in" data-aos-delay="600" >
-			<p class="mt-5"><a href="#" class="btn_01">INFOMATION一覧へ</a></p>
+			<p class="mt-5"><a href="<?php echo get_permalink(get_page_by_path('information')->ID); ?>" class="btn_01">INFOMATION一覧へ</a></p>
 		</div>
 
 	</div>
@@ -243,7 +220,7 @@
 				</div><!-- END SECTION TITLE -->
 				<h2 class="mt-3">手ごろな料金でプロのアドバイス。トレーニングをより効果的に。</h2>
 				<p class="mt-3">手軽な価格でパーソナライズドなトレーニングを受けませんか？当ジムではあなただけのプランを提供し、目標に合わせて最適な結果を得ることができます。費用対効果の高さが魅力です。</p>
-				<p class="mt-5 text-center text-md-start"><a href="<?php bloginfo('template_url'); ?>/price"  class="btn_01">PRICE LISTの詳細へ</a></p>
+				<p class="mt-5 text-center text-md-start"><a href="<?php echo get_permalink(get_page_by_path('price')->ID); ?>"  class="btn_01">PRICE LISTの詳細へ</a></p>
 			</div>
 
 			<div class="col-xl-7">
@@ -374,7 +351,7 @@
 			</div>
 		</div>
 		<div class="text-center" data-aos="zoom-in" data-aos-delay="800">
-			<p class="mt-5"><a href="<?php bloginfo('template_url'); ?>/staff"  class="btn_01">GIM STAFFの詳細へ</a></p>
+			<p class="mt-5"><a href="<?php echo get_permalink(get_page_by_path('staff')->ID); ?>"  class="btn_01">GIM STAFFの詳細へ</a></p>
 		</div>
 	</div>
 </section><!-- END STAFF AREA -->
@@ -439,7 +416,7 @@
 		</div>
 
 		<div class="text-center" data-aos="zoom-in" data-aos-delay="400">
-			<p class="mt-5"><a href="<?php bloginfo('template_url'); ?>/faq"  class="btn_01">FAQの一覧へ</a></p>
+			<p class="mt-5"><a href="<?php echo get_permalink(get_page_by_path('faq')->ID); ?>"  class="btn_01">FAQの一覧へ</a></p>
 		</div>
 
 	</div>
@@ -507,7 +484,7 @@
 			</div>
 
 			<div class="text-center" data-aos="zoom-in" data-aos-delay="400">
-				<p class="mt-5"><a href="<?php bloginfo('template_url'); ?>/blog"  class="btn_01">Blog一覧へ</a></p>
+				<p class="mt-5"><a href="<?php echo get_permalink(get_page_by_path('blog')->ID); ?>"  class="btn_01">Blog一覧へ</a></p>
 			</div>
 
 		</div>

@@ -108,36 +108,53 @@ get_header();
                   
 					<h1>Archive</h1>
 					<h2><?php echo date('Y'); ?>年</h2>
-					<ul>
-						<!-- <?php wp_get_archives(array('type' => 'monthly', 'limit' => 12, 'show_post_count' => true)); ?> -->
-						<?php
-							$monthly_archives = wp_get_archives(array(
-								'type'            => 'monthly',
-								'limit'           => 12, // Number of months to display
-								'format'          => 'custom',
-								'echo'            => 0 // Return the output instead of echoing it
-							));
+					<?php
+						// Get the monthly archives
+						$monthly_archives = wp_get_archives(array(
+							'type'            => 'monthly',
+							'limit'           => 12, // Number of months to display
+							'show_post_count' => true,
+							'format'          => 'custom', // Use custom format
+							'echo'            => 0 // Return the output instead of echoing it
+						));
+						print_r($monthly_archives);
+						echo '</pre>';
+						
+						$archives_array = explode('<br />', $monthly_archives);
 
-							// Use a regular expression to match and reformat the date string
-							$monthly_archives = preg_replace_callback(
-								'/(\d{4})\/(\d{2})/', // Match the year and month
-								function ($matches) {
-									$year = $matches[1];
-									$month = intval($matches[2]); // Convert month to integer to remove leading zero
-									return sprintf('%s年%d月', $year, $month);
-								},
-								$monthly_archives
-							);
+						// Iterate through each month-year-postcount string and format it
+						foreach ($archives_array as $archive) {
+							// Trim whitespace and check if the archive string is not empty
+							$archive = trim($archive);
+							if (empty($archive)) {
+								printf("xxxxxx");
+								continue;
+							}
 
-							// Echo the formatted monthly archives
-							echo $monthly_archives;
-							?>
+							// Extract the month, year, and post count
+							preg_match('/(\w+) (\d{4}) \((\d+)\)/', $archive, $matches);
 
-					</ul>
+							if (count($matches) === 4) {
+								$month = $matches[1];
+								$year = $matches[2];
+								$count = $matches[3];
+
+								// Convert month name to number
+								$month_number = date('n', strtotime($month));
+
+								// Reformat to desired format: 2024年5月
+								$formatted_date = sprintf('%s年%d月', $year, $month_number);
+
+								// Output the formatted date with post count as a link
+								printf('<ul><li><a href="%s">%s</a> <span>(%d)</span></li></ul>', get_month_link($year, $month_number), $formatted_date, $count);
+							}
+						}
+					?>
+
 					<h2 class="mt-4"><?php echo date('Y', strtotime('-1 year')); ?>年</h2>
-					<ul>
+					<!-- <ul>
 						<?php wp_get_archives(array('type' => 'monthly', 'limit' => 12, 'show_post_count' => true, 'year' => date('Y', strtotime('-1 year')))); ?>
-					</ul>
+					</ul> -->
 				</div>
 
 			</div>
