@@ -264,7 +264,7 @@
 					<div class="member-info">
 						<h4>田中&nbsp;太郎</h4>
 						<p class="txt-limit">パーソナルトレーナーとして5年間、お客様の目標達成をサポートしてきました。ダイエット、筋力アップ、ボディメイクなど、一人ひとりに合わせたトレーニングプログラムで、理想の体づくりをお手伝いします。</p>
-						<p class="mb-4"><a href="#">ジムスタッフの詳細へ<i class="fa-solid fa-arrow-right ms-2"></i></a></p>
+						<p class="mb-4"><a href="<?php echo get_permalink(get_page_by_path('staff')->ID); ?>">ジムスタッフの詳細へ<i class="fa-solid fa-arrow-right ms-2"></i></a></p>
 						<div class="social">
 							<a href="#"><i class="fa-brands fa-x-twitter"></i></a>
 							<a href="#"><i class="fa-brands fa-facebook-f"></i></a>
@@ -280,7 +280,7 @@
 					<div class="member-info">
 						<h4>佐藤&nbsp;健太</h4>
 						<p class="txt-limit mb-3">柔道整復師の国家資格を持つパーソナルトレーナーとして、お客様の健康と目標達成をサポートしています。怪我や痛みを抱える方でも安心してトレーニングできるよう、身体の状態に合わせたプログラムを提供いたします。</p>
-						<p class="mb-4"><a href="#">ジムスタッフの詳細へ<i class="fa-solid fa-arrow-right ms-2"></i></a></p>
+						<p class="mb-4"><a href="<?php echo get_permalink(get_page_by_path('staff')->ID); ?>">ジムスタッフの詳細へ<i class="fa-solid fa-arrow-right ms-2"></i></a></p>
 						<div class="social">
 							<a href="#"><i class="fa-brands fa-x-twitter"></i></a>
 							<a href="#"><i class="fa-brands fa-facebook-f"></i></a>
@@ -296,7 +296,7 @@
 					<div class="member-info">
 						<h4>高橋&nbsp;美咲</h4>
 						<p class="txt-limit mb-3">5年間パーソナルトレーナーとして、ダイエット、筋力アップ、姿勢改善など、お客様の目標達成をサポートしてきました。栄養士資格も活かし、食事指導も行い、効果的なトレーニングを実現します。</p>
-						<p class="mb-4"><a href="#">ジムスタッフの詳細へ<i class="fa-solid fa-arrow-right ms-2"></i></a></p>
+						<p class="mb-4"><a href="<?php echo get_permalink(get_page_by_path('staff')->ID); ?>">ジムスタッフの詳細へ<i class="fa-solid fa-arrow-right ms-2"></i></a></p>
 						<div class="social">
 							<a href="#"><i class="fa-brands fa-x-twitter"></i></a>
 							<a href="#"><i class="fa-brands fa-facebook-f"></i></a>
@@ -312,7 +312,7 @@
 					<div class="member-info">
 						<h4>伊藤&nbsp;真理</h4>
 						<p class="txt-limit mb-3">運動が苦手な方でも安心してトレーニングを始められるよう丁寧に指導いたします。また、運動に慣れていない方でも無理なく続けられるよう、段階的に負荷を上げていくなど、お客様のペースに合わせてトレーニングを進めていきます。</p>
-						<p class="mb-4"><a href="#">ジムスタッフの詳細へ<i class="fa-solid fa-arrow-right ms-2"></i></a></p>
+						<p class="mb-4"><a href="<?php echo get_permalink(get_page_by_path('staff')->ID); ?>">ジムスタッフの詳細へ<i class="fa-solid fa-arrow-right ms-2"></i></a></p>
 						<div class="social">
 							<a href="#"><i class="fa-brands fa-x-twitter"></i></a>
 							<a href="#"><i class="fa-brands fa-facebook-f"></i></a>
