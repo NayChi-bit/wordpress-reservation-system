@@ -414,7 +414,7 @@
 						<p class="calegory01 mb-2">Diet Blog</p>
 						<h5 class="card-title">運動嫌いでも楽しく続けられる！パーソナルジムで無理なくダイエット</h5>
 						<p class="card-text mb-4">運動が苦手な方でも、プロのトレーナーがマンツーマンでサポートするので、無理なく楽しくダイエットを続けられます。お客様に合わせたトレーニングメニューや食事指導で、理想の体型を目指しましょう。</p>
-						<a href="#" class="mt-auto align-self-start"><i class="bi bi-arrow-right me-1"></i>Read More</a>
+						<a href="<?php the_permalink(); ?>" class="mt-auto align-self-start"><i class="bi bi-arrow-right me-1"></i>Read More</a>
 					</div>
 				</div>
 			</div>
@@ -426,7 +426,7 @@
 						<p class="calegory02 mb-2">Training Blog</p>
 						<h5 class="card-title">デスクワーク中心の方必見！姿勢改善・腰痛解消のためのパーソナルトレーニング</h5>
 						<p class="card-text mb-4">デスクワークによる姿勢の悪さや腰痛にお悩みの方、パーソナルトレーニングで正しい姿勢を身につけましょう。ストレッチや筋力トレーニングで、体の歪みを改善し、痛みを解消します。</p>
-						<a href="#" class="mt-auto align-self-start"><i class="bi bi-arrow-right me-1"></i>Read More</a>
+						<a href="<?php the_permalink(); ?>" class="mt-auto align-self-start"><i class="bi bi-arrow-right me-1"></i>Read More</a>
 					</div>
 				</div>
 			</div>
@@ -438,7 +438,7 @@
 						<p class="calegory01 mb-2">Diet Blog</p>
 						<h5 class="card-title">産後太り解消・体型維持のためのパーソナルトレーニング</h5>
 						<p class="card-text mb-4">出産後の体型変化にお悩みの方、パーソナルトレーニングで効率的に体型を戻しましょう。経験豊富なトレーナーが、産後の体質や体調に合わせたトレーニングメニューを提案します</p>
-						<a href="#" class="mt-auto align-self-start"><i class="bi bi-arrow-right me-1"></i>Read More</a>
+						<a href="<?php the_permalink(); ?>" class="mt-auto align-self-start"><i class="bi bi-arrow-right me-1"></i>Read More</a>
 					</div>
 				</div>
 			</div>
@@ -450,7 +450,7 @@
 						<p class="calegory02 mb-2">Training Blog</p>
 						<h5 class="card-title">運動初心者でも安心！パーソナルトレーニングで始める健康的な生活</h5>
 						<p class="card-text mb-4">運動初心者の方でも、パーソナルトレーニングで運動習慣を身につけて、健康的な生活を始めましょう。基礎体力向上やストレス解消など、様々な効果が期待できます。</p>
-						<a href="#" class="mt-auto align-self-start"><i class="bi bi-arrow-right me-1"></i>Read More</a>
+						<a href="<?php the_permalink(); ?>" class="mt-auto align-self-start"><i class="bi bi-arrow-right me-1"></i>Read More</a>
 					</div>
 				</div>
 			</div>
