@@ -10,7 +10,7 @@ get_header();
 		<div class="container">
 			<ol>
 				<li><a href="<?php echo home_url(); ?>">Home</a></li>
-				<li class="current">Blog</li>
+				<li class="current"><a href="<?php echo get_permalink(get_page_by_path('blog')->ID); ?>">Blog</a></li>
 				<li class="current">運動嫌いでも楽しく続けられる！パーソナルジムで無理なくダイエット</li>
 			</ol>
 		</div>
