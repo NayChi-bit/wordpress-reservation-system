@@ -36,10 +36,8 @@ Template Name: Service Page Template
 					'post_type' => 'post',
 					'category_name' => 'Services'
 				));
-				$post_count = $service_query->found_posts;
 
 				if ($service_query->have_posts()) :
-					echo '<p>Total posts found: ' . $post_count . '</p>';
 					while ($service_query->have_posts()) : $service_query->the_post();
 			?>
 				<div class="col-lg-12 " data-aos="fade-up" data-aos-delay="100">

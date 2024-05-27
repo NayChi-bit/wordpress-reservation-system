@@ -140,65 +140,37 @@
 
 	<div class="container">
 		<div class="row gy-4">
+			<?php
+				$service_query = new WP_Query(array(
+					'post_type' => 'post',
+					'category_name' => 'Services'
+				));
+
+				if ($service_query->have_posts()) :
+					while ($service_query->have_posts()) : $service_query->the_post();
+			?>
 			<div class="col-lg-6 " data-aos="fade-up" data-aos-delay="100">
 				<div class="service-item d-md-flex d-block">
-					<div class="icon flex-shrink-0"><img src="<?php bloginfo('template_url'); ?>/assets/images/5.jpg" class="img-fluid"/></div>
+					<div class="icon flex-shrink-0">
+						<?php if (has_post_thumbnail()) : ?>
+                            <?php the_post_thumbnail('full', ['class' => 'img-fluid']); ?>
+                    	<?php endif; ?>
+					</div>
 					<div>
-						<h4 class="title"><a href="services-details.html" class="stretched-link"><i class="fa-solid fa-user-minus"></i>美ボディメイク<br>
-							しなやかで美しいボディラインを目指す</a></h4>
-						<p class="description">しなやかで美しいボディラインを手に入れたいあなたへ、パーソナルトレーニングによる美ボディメイクプログラムをご提案いたします。</p>
+						<h4 class="title">
+							<a href="<?php echo get_permalink(get_page_by_path('services')->ID); ?>" class="stretched-link"><i class="fa-solid fa-user-minus"></i>
+							<?php the_title(); ?>
+							</a>
+						</h4>
+						<p class="description"><?php the_excerpt(); ?></p>
 					</div>
 				</div>
 			</div><!-- End Service Item -->
-			<div class="col-lg-6 " data-aos="fade-up" data-aos-delay="200">
-				<div class="service-item d-md-flex d-block">
-					<div class="icon flex-shrink-0"><img src="<?php bloginfo('template_url'); ?>/assets/images/7.jpg" class="img-fluid"/></div>
-					<div>
-						<h4 class="title"><a href="services-details.html" class="stretched-link">筋力アップ：力強く引き締まった身体を目指す</a></h4>
-						<p class="description">全身を鍛えるトレーニングで、理想の引き締まった身体を実現。経験豊富なトレーナーが、あなたの目標に合わせた最適なメニューを作成します。</p>
-					</div>
-				</div>
-			</div><!-- End Service Item -->
-
-			<div class="col-lg-6 " data-aos="fade-up" data-aos-delay="300">
-				<div class="service-item d-md-flex d-block">
-					<div class="icon flex-shrink-0"><img src="<?php bloginfo('template_url'); ?>/assets/images/9.jpg" class="img-fluid"/></div>
-					<div>
-						<h4 class="title"><a href="services-details.html" class="stretched-link">ダイエット：脂肪燃焼と引き締めを同時に目指す</a></h4>
-						<p class="description">有酸素運動で脂肪を燃焼し、筋トレで引き締まった体を作り、食事指導で健康的な食生活もサポート。あなただけの最速プランで理想のボディへ導きます。</p>
-					</div>
-				</div>
-			</div><!-- End Service Item -->
-
-			<div class="col-lg-6 " data-aos="fade-up" data-aos-delay="400">
-				<div class="service-item d-md-flex d-block">
-					<div class="icon flex-shrink-0"><img src="<?php bloginfo('template_url'); ?>/assets/images/8.jpg" class="img-fluid"/></div>
-					<div>
-						<h4 class="title"><a href="services-details.html" class="stretched-link">健康増進：体力向上と健康的な身体を目指す</a></h4>
-						<p class="description">ウォーキング、筋トレ、ストレッチなど、無理なく続けられる運動を取り入れ、心身ともに健康な生活を実現。体力向上、ストレス解消、体型維持など、様々な効果が期待できます。</p>
-					</div>
-				</div>
-			</div><!-- End Service Item -->
-
-			<div class="col-lg-6 " data-aos="fade-up" data-aos-delay="500">
-				<div class="service-item d-md-flex d-block">
-					<div class="icon flex-shrink-0"><img src="<?php bloginfo('template_url'); ?>/assets/images/10.jpg" class="img-fluid"/></div>
-					<div>
-						<h4 class="title"><a href="services-details.html" class="stretched-link">シニア向け：年齢に合わせた安全な運動を目指す</a></h4>
-						<p class="description">年齢に合わせた運動で、体力向上、筋力アップ、転倒予防など、様々な効果が期待できます。無料体験やカウンセリングも実施しているので、お気軽にお問い合わせください。</p>
-					</div>
-				</div>
-			</div><!-- End Service Item -->
-
-			<div class="col-lg-6 " data-aos="fade-up" data-aos-delay="600">
-				<div class="service-item d-md-flex d-block">
-					<div class="icon flex-shrink-0"><img src="<?php bloginfo('template_url'); ?>/assets/images/11.jpg" class="img-fluid"/></div>
-					<div>
-						<h4 class="title"><a href="services-details.html" class="stretched-link">食事管理：食べながら痩せられるおすすめの食事メニューも紹介</a></h4>
-						<p class="description">トレーニングだけでなく食事に関する知識も豊富なプロフェッショナルです。また、より専門的な指導を行うために管理栄養士が在籍しています。</p>
-					</div>
-				</div>
-			</div><!-- End Service Item -->
+			<?php
+				endwhile;
+				wp_reset_postdata();
+				endif;
+			?>
 		</div>
 		<div class="text-center" data-aos="zoom-in" data-aos-delay="800" >
 			<p class="mt-5"><a href="<?php echo get_permalink(get_page_by_path('services')->ID); ?>" class="btn_01">SERVICEの詳細へ</a></p>
