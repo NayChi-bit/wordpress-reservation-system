@@ -83,14 +83,7 @@ get_header();
 
                 <div class="col-lg-2 side-area" data-aos="fade-up" data-aos-delay="300">
                     <h1>Archive</h1>
-                    <h2><?php echo date('Y'); ?>年</h2>
-                    <ul>
-                        <?php wp_get_archives(array('type' => 'monthly', 'limit' => 12, 'show_post_count' => true)); ?>
-                    </ul>
-                    <h2 class="mt-4"><?php echo date('Y', strtotime('-1 year')); ?>年</h2>
-                    <ul>
-                        <?php wp_get_archives(array('type' => 'monthly', 'limit' => 12, 'show_post_count' => true, 'year' => date('Y', strtotime('-1 year')))); ?>
-                    </ul>
+                    <?php showArchievePost(2); ?>
                 </div>          
 			</div>
 		</div>
@@ -148,5 +141,56 @@ get_header();
 
 		</div>
 	</section><!-- END CONTACT AREA -->
+
+	<?php 
+		function showArchievePost($category_id, $limit = 12){
+
+			global $wpdb;
+
+			$query = $wpdb->prepare("
+				SELECT DISTINCT YEAR(post_date) AS year, MONTH(post_date) AS month, COUNT(ID) as post_count
+				FROM $wpdb->posts
+				LEFT JOIN $wpdb->term_relationships ON ($wpdb->posts.ID = $wpdb->term_relationships.object_id)
+				LEFT JOIN $wpdb->term_taxonomy ON ($wpdb->term_relationships.term_taxonomy_id = $wpdb->term_taxonomy.term_taxonomy_id)
+				WHERE $wpdb->term_taxonomy.term_id = %d
+				AND $wpdb->term_taxonomy.taxonomy = 'category'
+				AND post_type = 'post'
+				AND post_status = 'publish'
+				GROUP BY YEAR(post_date), MONTH(post_date)
+				ORDER BY post_date DESC
+				LIMIT %d
+			", $category_id, $limit);
+
+			$yearly_archives = $wpdb->get_results($query);
+
+			if (!empty($yearly_archives)) {
+				$current_year = null;
+		
+				foreach ($yearly_archives as $archive) {
+					$year = $archive->year;
+					$month = $archive->month;
+					$post_count = $archive->post_count;
+		
+					//　年チャック
+					if ($current_year !== $year) {
+						//　初期年チャック
+						if ($current_year !== null) {
+							echo '</ul>'; // 前の年リストをクローズ
+						}
+						$current_year = $year;
+						echo '<h2>' . esc_html($year) . '年</h2>';
+						echo '<ul>'; // 新しい年リストスタート
+					}
+		
+					$formatted_date = sprintf('%d年%d月', $year, $month);
+					$archive_link = get_month_link($year, $month);
+					echo '<li><a href="' . esc_url($archive_link) . '">' . esc_html($formatted_date) . '<span>(' . esc_html($post_count) . ')</span></a> </li>';
+				}
+		
+				echo '</ul>'; // 最後の年リストクローズ
+			}
+		}
+		
+	?>
 
 	<?php get_footer(); ?>
