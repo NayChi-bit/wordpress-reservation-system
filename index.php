@@ -374,7 +374,7 @@
 			</div>
 		</div>
 		<div class="text-center" data-aos="zoom-in" data-aos-delay="800">
-			<p class="mt-5"><a href="#" class="btn_01">GIM STAFFの詳細へ</a></p>
+			<p class="mt-5"><a href="<?php bloginfo('template_url'); ?>/staff"  class="btn_01">GIM STAFFの詳細へ</a></p>
 		</div>
 	</div>
 </section><!-- END STAFF AREA -->
