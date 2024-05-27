@@ -9,7 +9,7 @@ get_header();
 	<nav class="pan" data-aos="fade-up" data-aos-delay="100">
 		<div class="container">
 			<ol>
-				<li><a href="index.html">Home</a></li>
+				<li><a href="<?php echo home_url(); ?>">Home</a></li>
 				<li class="current">Blog</li>
 				<li class="current">運動嫌いでも楽しく続けられる！パーソナルジムで無理なくダイエット</li>
 			</ol>

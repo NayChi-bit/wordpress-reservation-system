@@ -7,8 +7,8 @@ get_header();
 	<nav class="pan" data-aos="fade-up" data-aos-delay="100">
 		<div class="container">
 			<ol>
-				<li><a href="index.html">Home</a></li>
-				<li class="current"><a href="infomation.html">Information</a></li>
+				<li><a href="<?php echo home_url(); ?>">Home</a></li>
+				<li class="current"><a href="<?php echo get_permalink(get_page_by_path('information')->ID); ?>">Information</a></li>
 				<li class="current"><?php the_title(); ?></li>
 			</ol>
 		</div>
