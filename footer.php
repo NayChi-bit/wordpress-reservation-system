@@ -57,7 +57,7 @@
 					<h4>Our Social Networks</h4>
 					<div class="social mt-2">
 						<a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-						<a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+						<a href="https://www.facebook.com/profile.php?id=61560041828521"><i class="fa-brands fa-facebook-f"></i></a>
 						<a href="#"><i class="fa-brands fa-instagram"></i></a>
 					</div>
 				</div>
