@@ -18,24 +18,6 @@
 	<!-- Favicons -->
 	<!-- CSS FILES -->
 	<?php wp_head(); ?>
-
-	<script>
-		window.addEventListener('scroll', function() {
-			var header = document.getElementById('header');
-			var logoImage = document.querySelector('.logo img');
-			var scrollPosition = window.scrollY;
-
-			// 100px以上スクロールされた場合
-			if(scrollPosition > 100) {
-				// ロゴ画像を別の画像に変更する
-				logoImage.src = '<?php echo get_template_directory_uri(); ?>/assets/images/alternate_logo.png'
-			} else {
-				// スクロールが100px未満の場合は元のロゴ画像を表示する
-				logoImage.src = '<?php echo get_template_directory_uri(); ?>/assets/images/logo.png';
-			}
-		});
-	</script>
-
 </head>
 
 	<!-- HEADER START -->
@@ -49,8 +31,18 @@
 	?>
 
 	<div class="container-fluid d-flex align-items-center justify-content-between">
-		<a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
-			<h1 class="logo"><img src="<?php bloginfo('template_url'); ?>/assets/images/logo.png" class="img-fluid"/></h1>
+		<a href="<?php echo home_url(); ?>" class="logo d-flex align-items-center me-auto me-xl-0">
+			<?php 
+				if(is_front_page()){
+			?>
+					<h1 class="logo"><img src="<?php bloginfo('template_url'); ?>/assets/images/logo.png" class="img-fluid"/></h1>
+			<?php
+				}else{
+			?>
+					<h1 class="logo"><img src="<?php bloginfo('template_url'); ?>/assets/images/alternate_logo.png" class="img-fluid"/></h1>
+			<?php
+				}
+			?>
 		</a>
 
 		<!-- NAV MENU AREA -->

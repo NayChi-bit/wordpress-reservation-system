@@ -527,4 +527,21 @@
 	</div>
 </section><!-- END CONTACT AREA -->
 
+<script>
+	window.addEventListener('scroll', function() {
+		var header = document.getElementById('header');
+		var logoImage = document.querySelector('.logo img');
+		var scrollPosition = window.scrollY;
+
+		// 100px以上スクロールされた場合
+		if(scrollPosition > 100) {
+			// ロゴ画像を別の画像に変更する
+			logoImage.src = '<?php echo get_template_directory_uri(); ?>/assets/images/alternate_logo.png'
+		} else {
+			// スクロールが100px未満の場合は元のロゴ画像を表示する
+			logoImage.src = '<?php echo get_template_directory_uri(); ?>/assets/images/logo.png';
+		}
+	});
+</script>
+
 <?php get_footer(); ?>
