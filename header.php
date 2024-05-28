@@ -62,10 +62,10 @@
 				<li><a href="<?php echo get_permalink(get_page_by_path('price')->ID); ?>">Price List</a></li>
 				<li class="dropdown has-dropdown"><a href="<?php echo get_permalink(get_page_by_path('staff')->ID); ?>"><span>Gim Staff</span> <i class="bi bi-chevron-down"></i></a>
 					<ul class="dd-box-shadow">
-						<li><a href="#">田中&nbsp;太郎</a></li>
-						<li><a href="#">佐藤&nbsp;健太</a></li>
-						<li><a href="#">高橋&nbsp;美咲</a></li>
-						<li><a href="#">伊藤&nbsp;真理</a></li>
+						<li><a href="<?php echo get_permalink(get_page_by_path('staff')->ID); ?>#tanaka-taro">田中&nbsp;太郎</a></li>
+						<li><a href="<?php echo get_permalink(get_page_by_path('staff')->ID); ?>#sato-kenta">佐藤&nbsp;健太</a></li>
+						<li><a href="<?php echo get_permalink(get_page_by_path('staff')->ID); ?>#takahashi-misaki">高橋&nbsp;美咲</a></li>
+						<li><a href="<?php echo get_permalink(get_page_by_path('staff')->ID); ?>#ito-mari">伊藤&nbsp;真理</a></li>
 					</ul>
 				</li>
 				<li><a href="<?php echo get_permalink(get_page_by_path('faq')->ID); ?>">FAQ</a></li>
