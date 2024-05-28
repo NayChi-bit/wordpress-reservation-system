@@ -141,13 +141,13 @@
 	<div class="container">
 		<div class="row gy-4">
 			<?php
-				$service_query = new WP_Query(array(
+				$blog_query = new WP_Query(array(
 					'post_type' => 'post',
 					'category_name' => 'Services'
 				));
 
-				if ($service_query->have_posts()) :
-					while ($service_query->have_posts()) : $service_query->the_post();
+				if ($blog_query->have_posts()) :
+					while ($blog_query->have_posts()) : $blog_query->the_post();
 			?>
 			<div class="col-lg-6 " data-aos="fade-up" data-aos-delay="100">
 				<div class="service-item d-md-flex d-block">
@@ -404,61 +404,74 @@
 		<p>トレーニングやダイエット、健康に関する情報を発信しています。</p>
 	</div><!-- END SECTION TITLE -->
 
-	<div class="container">
+	<div class="container" data-aos="fade-up" data-aos-delay="300">
 		<div class="row">
+			<?php
+				$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+				$blog_query = new WP_Query(array(
+					'post_type' => 'post',
+					'category_name' => 'Blog',
+					'posts_per_page' => 4,
+					'paged' => $paged 
+				));
 
-			<div class="col-12 col-lg-3 mb-3 d-flex align-items-stretch">
-				<div class="card">
-					<img src="<?php bloginfo('template_url'); ?>/assets/images/21.jpg" class="card-img-top" alt="Card Image">
-					<div class="card-body d-flex flex-column">
-						<p class="calegory01 mb-2">Diet Blog</p>
-						<h5 class="card-title">運動嫌いでも楽しく続けられる！パーソナルジムで無理なくダイエット</h5>
-						<p class="card-text mb-4">運動が苦手な方でも、プロのトレーナーがマンツーマンでサポートするので、無理なく楽しくダイエットを続けられます。お客様に合わせたトレーニングメニューや食事指導で、理想の体型を目指しましょう。</p>
-						<a href="<?php the_permalink(); ?>" class="mt-auto align-self-start"><i class="bi bi-arrow-right me-1"></i>Read More</a>
+				if ($blog_query->have_posts()) :
+					while ($blog_query->have_posts()) : $blog_query->the_post();
+				?>
+
+					<div class="col-12 col-lg-3 mb-5 d-flex align-items-stretch">
+						<div class="card">
+							<?php if (has_post_thumbnail()) : ?>
+							<?php the_post_thumbnail('full', ['class' => 'card-img-top']); ?>
+							<?php endif; ?>
+							<div class="card-body d-flex flex-column">
+								
+								<?php
+									$categories = get_the_category(get_the_ID());
+									if (!empty($categories)) {
+										foreach ($categories as $category) {
+											if ($category->category_parent != 0) {
+												if($category->name === 'Diet Blog'){
+								?>
+													<p class="calegory01 mb-2">
+								<?php
+													echo $category->name;
+								?>
+													</p>
+								<?php
+												}
+												if($category->name === 'Training Blog'){
+								?>
+													<p class="calegory02 mb-2">
+								<?php
+														echo $category->name;
+								?>
+													</p>
+								<?php             
+												}
+											}
+										}
+									}
+								?>
+								
+								<h5 class="card-title"><?php the_title(); ?></h5>
+								<p class="card-text mb-4"><?php the_excerpt(); ?></p>
+								<a href="<?php the_permalink(); ?>" class="mt-auto align-self-start"><i class="bi bi-arrow-right me-1"></i>Read More</a>
+							</div>
+						</div>
 					</div>
-				</div>
-			</div>
 
-			<div class="col-12 col-lg-3 mb-3 d-flex align-items-stretch">
-				<div class="card">
-					<img src="<?php bloginfo('template_url'); ?>/assets/images/22.jpg" class="card-img-top" alt="Card Image">
-					<div class="card-body d-flex flex-column">
-						<p class="calegory02 mb-2">Training Blog</p>
-						<h5 class="card-title">デスクワーク中心の方必見！姿勢改善・腰痛解消のためのパーソナルトレーニング</h5>
-						<p class="card-text mb-4">デスクワークによる姿勢の悪さや腰痛にお悩みの方、パーソナルトレーニングで正しい姿勢を身につけましょう。ストレッチや筋力トレーニングで、体の歪みを改善し、痛みを解消します。</p>
-						<a href="<?php the_permalink(); ?>" class="mt-auto align-self-start"><i class="bi bi-arrow-right me-1"></i>Read More</a>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-12 col-lg-3 mb-3 d-flex align-items-stretch">
-				<div class="card">
-					<img src="<?php bloginfo('template_url'); ?>/assets/images/23.jpg" class="card-img-top" alt="Card Image">
-					<div class="card-body d-flex flex-column">
-						<p class="calegory01 mb-2">Diet Blog</p>
-						<h5 class="card-title">産後太り解消・体型維持のためのパーソナルトレーニング</h5>
-						<p class="card-text mb-4">出産後の体型変化にお悩みの方、パーソナルトレーニングで効率的に体型を戻しましょう。経験豊富なトレーナーが、産後の体質や体調に合わせたトレーニングメニューを提案します</p>
-						<a href="<?php the_permalink(); ?>" class="mt-auto align-self-start"><i class="bi bi-arrow-right me-1"></i>Read More</a>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-12 col-lg-3 mb-3 d-flex align-items-stretch">
-				<div class="card">
-					<img src="<?php bloginfo('template_url'); ?>/assets/images/24.jpg" class="card-img-top" alt="Card Image">
-					<div class="card-body d-flex flex-column">
-						<p class="calegory02 mb-2">Training Blog</p>
-						<h5 class="card-title">運動初心者でも安心！パーソナルトレーニングで始める健康的な生活</h5>
-						<p class="card-text mb-4">運動初心者の方でも、パーソナルトレーニングで運動習慣を身につけて、健康的な生活を始めましょう。基礎体力向上やストレス解消など、様々な効果が期待できます。</p>
-						<a href="<?php the_permalink(); ?>" class="mt-auto align-self-start"><i class="bi bi-arrow-right me-1"></i>Read More</a>
-					</div>
-				</div>
-			</div>
-
-			<div class="text-center" data-aos="zoom-in" data-aos-delay="400">
-				<p class="mt-5"><a href="<?php echo get_permalink(get_page_by_path('blog')->ID); ?>"  class="btn_01">Blog一覧へ</a></p>
-			</div>
-
+			<?php
+					endwhile;
+			?>
+				
+			<?php
+					wp_reset_postdata();
+				endif;
+			?>
+		</div>
+		<div class="text-center" data-aos="zoom-in" data-aos-delay="400">
+			<p class="mt-5"><a href="<?php echo get_permalink(get_page_by_path('blog')->ID); ?>"  class="btn_01">Blog一覧へ</a></p>
 		</div>
 	</div>
 </section><!-- END BLOG AREA -->
@@ -513,20 +526,5 @@
 
 	</div>
 </section><!-- END CONTACT AREA -->
-	
-<!-- <?php
-if ( have_posts() ) :
-
-	while ( have_posts() ) : the_post();
-
-		get_template_part( 'template-parts/content', 'page' );
-
-	endwhile;
-
-else :
-
-	get_template_part( 'template-parts/content', 'none' );
-
-endif; ?> -->
 
 <?php get_footer(); ?>
