@@ -64,7 +64,7 @@ Template Name: Sitemap Page Template
                 <dd class="mb-5">お問い合わせフォームや連絡先情報を掲載しています。</dd>
             </dl>
             <dl class="mt-5 border-bottom">
-                <dt class="fs-4 mb-3">BOOKING CARENDAR</dt>
+                <dt class="fs-4 mb-3">BOOKING CALENDAR</dt>
                 <dd class="mb-5">予約カレンダーへのリンクを掲載しています。</dd>
             </dl>
             <dl class="mt-5 border-bottom">
@@ -120,7 +120,7 @@ Template Name: Sitemap Page Template
 
             <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
                 <div class="carender text-center">
-                    <h4>Booking Carender</h4>
+                    <h4>Booking Calendar</h4>
                     <img  src="<?php bloginfo('template_url'); ?>/assets/images/images02.png" class="img-fluid"/> </div>
                 </div>
             </div>
