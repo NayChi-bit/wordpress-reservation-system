@@ -11,15 +11,27 @@
 <section id="hero" class="hero">
 	<img src="<?php bloginfo('template_url'); ?>/assets/images/Fitness-Photography-Ideas.jpg" alt="" data-aos="fade-in">
 	<div class="container text-center">
-		<h2 class="hero-ttl01" data-aos="fade-up" data-aos-delay="100">Personal Trainer Website Templates</h2>
+		<?php if ( is_customize_preview() ) : ?>
+			<span class="customize-partial-edit-shortcut" data-control="mytheme_hero_title">
+				<button type="button" class="customize-partial-edit-shortcut-button">✏️</button>
+			</span>
+		<?php endif; ?>
+		<h2 class="hero-ttl01" data-aos="fade-up" data-aos-delay="100"><?php echo get_theme_mod( 'mytheme_hero_title', 'Personal Trainer Website Templates' ); ?></h2>
 		<p data-aos="fade-up" data-aos-delay="200">Personal Trainer Website Templates</p>
-		<p data-aos="zoom-in" data-aos-delay="600" class="mt-5"><a href="#" class="btn_01"><i class="bi bi-calendar-check-fill"></i>&nbsp;BOOKING CARENDAR</a></p>
+		<p data-aos="zoom-in" data-aos-delay="600" class="mt-5"><a href="#" class="btn_01"><i class="bi bi-calendar-check-fill"></i>&nbsp;BOOKING CALENDAR</a></p>
 	</div>
+
 </section><!-- END HERO SECTION -->
+<?php if ( is_customize_preview() ) : ?>
+			<span class="customize-partial-edit-shortcut" data-control="edit">
+				<button type="button" class="customize-partial-edit-shortcut-button">✏️</button>
+			</span>
+		<?php endif; ?>
 
 <!--  CAMPAIN AREA -->
 <section class="campaign">
 	<div class="container">
+	
 		<!--  SECTION TITLE -->
 		<div class="section-title" data-aos="fade-up" data-aos-delay="100">
 			<h2 class="mb-3">Campaign List</h2>

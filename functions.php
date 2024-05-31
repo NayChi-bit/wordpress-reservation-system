@@ -129,14 +129,17 @@
       // Swiper
       wp_register_script('swiper8', 'https://unpkg.com/swiper@8/swiper-bundle.min.js', array ( 'jquery' ), 0.1, true);
       wp_enqueue_script( 'swiper8');
+<<<<<<< Updated upstream
 
       //  Main JS
       wp_enqueue_script('custom-js', get_template_directory_uri() . '/js/custom.js', array('jquery'), null, true);
+=======
+>>>>>>> Stashed changes
    }
 
    add_action('wp_enqueue_scripts', 'add_script');
 
-   // Post Template
+   // Postテンプレート
    function load_single_template($template) {
       global $post;
   
@@ -157,16 +160,16 @@
      }
   
       return $template;
-  }
+   }
   
-  //各投稿ページ追加
-  add_filter('single_template', 'load_single_template');
+   //各投稿ページ追加
+   add_filter('single_template', 'load_single_template');
   
-  // 投稿イメージ
-  add_theme_support('post-thumbnails', array('post', 'page'));
+   // 投稿イメージ
+   add_theme_support('post-thumbnails', array('post', 'page'));
 
   // ページネーショ
-  function custom_pagination($args = array()) {
+   function custom_pagination($args = array()) {
       $defaults = array(
          'prev_text' => '<i class="fa fa-angle-left"></i>',
          'next_text' => '<i class="fa fa-angle-right"></i>',
@@ -199,5 +202,50 @@
 
       return '';
    }
+
+   function mytheme_customize_register( $wp_customize ) {
+      // セクションの追加
+      $wp_customize->add_section( 'mytheme_hero_section', array(
+          'title'    => __( 'Hero Section', 'mytheme' ),
+          'priority' => 30,
+      ) );
+  
+      // hero-ttl01 の設定の追加
+      $wp_customize->add_setting( 'mytheme_hero_title', array(
+          'default'   => __( 'Personal Trainer Website Templates', 'mytheme' ),
+          'transport' => 'postMessage', // リアルタイムプレビューを有効にする
+      ) );
+  
+      // コントロールの追加
+      $wp_customize->add_control( 'mytheme_hero_title_control', array(
+          'label'    => __( 'Hero Title', 'mytheme' ),
+          'section'  => 'mytheme_hero_section',
+          'settings' => 'mytheme_hero_title',
+          'type'     => 'text',
+      ) );
+  }
+  add_action( 'customize_register', 'mytheme_customize_register' );
+  
+  function mytheme_customizer_live_preview() {
+      wp_enqueue_script(
+          'mytheme-customizer',
+          get_template_directory_uri() . '/assets/js/theme-customizer.js',
+          array( 'jquery', 'customize-preview' ),
+          null,
+          true
+      );
+  }
+  add_action( 'customize_preview_init', 'mytheme_customizer_live_preview' );
+  
+  function mytheme_customizer_preview_js() {
+      wp_enqueue_script(
+          'mytheme-customizer-preview',
+          get_template_directory_uri() . '/assets/js/theme-customizer-preview.js',
+          array( 'customize-preview' ),
+          null,
+          true
+      );
+  }
+  add_action( 'customize_preview_init', 'mytheme_customizer_preview_js' );  
 
 ?>
