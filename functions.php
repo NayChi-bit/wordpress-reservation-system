@@ -129,12 +129,6 @@
       // Swiper
       wp_register_script('swiper8', 'https://unpkg.com/swiper@8/swiper-bundle.min.js', array ( 'jquery' ), 0.1, true);
       wp_enqueue_script( 'swiper8');
-<<<<<<< Updated upstream
-
-      //  Main JS
-      wp_enqueue_script('custom-js', get_template_directory_uri() . '/js/custom.js', array('jquery'), null, true);
-=======
->>>>>>> Stashed changes
    }
 
    add_action('wp_enqueue_scripts', 'add_script');

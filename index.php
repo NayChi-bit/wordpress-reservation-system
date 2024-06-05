@@ -22,11 +22,7 @@
 	</div>
 
 </section><!-- END HERO SECTION -->
-<?php if ( is_customize_preview() ) : ?>
-			<span class="customize-partial-edit-shortcut" data-control="edit">
-				<button type="button" class="customize-partial-edit-shortcut-button">✏️</button>
-			</span>
-		<?php endif; ?>
+
 
 <!--  CAMPAIN AREA -->
 <section class="campaign">
