@@ -93,6 +93,11 @@
          wp_enqueue_style('custom-register');
       }
 
+      wp_register_style('forget-password', get_template_directory_uri() . '/css/forget-password.css', false, '1.0', 'all');
+      if (is_page('forget-password')) {
+         wp_enqueue_style('forget-password');
+      }
+
       if (is_single()) {
          $post_categories = get_the_category();
          foreach ($post_categories as $category) {
