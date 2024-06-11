@@ -83,6 +83,16 @@
          wp_enqueue_style( 'sitemap');
       } 
 
+      wp_register_style('custom-login', get_template_directory_uri() . '/css/login.css', false, '1.0', 'all');
+      if (is_page('login')) {
+         wp_enqueue_style('custom-login');
+      }
+
+      wp_register_style('custom-register', get_template_directory_uri() . '/css/register.css', false, '1.0', 'all');
+      if (is_page('register')) {
+         wp_enqueue_style('custom-register');
+      }
+
       if (is_single()) {
          $post_categories = get_the_category();
          foreach ($post_categories as $category) {

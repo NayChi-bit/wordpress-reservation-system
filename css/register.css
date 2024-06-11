@@ -1,0 +1,135 @@
+@charset "utf-8";
+
+
+
+/*--------------------------------------------------------------
+## Register AREA
+--------------------------------------------------------------*/
+
+.custom-form-container, .card-form-container {
+    width: 800px;
+    margin: 34px auto 0;
+    padding: 20px;
+    background: #f7f7f7;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.custom-form-container h2, .card-form-container h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #5a5a5a;
+    text-align: left;
+}
+
+.custom-form-container table, .card-form-container table  {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.custom-form-container th, .custom-form-container td, .card-form-container th, .card-form-container td {
+    padding: 20px;
+    text-align: left;
+}
+
+.custom-form-container th, .card-form-container th {
+    border-bottom: 1px solid #dcdcdc;
+}
+
+.custom-form-container td, .card-form-container td {
+    border-bottom: 1px solid #dcdcdc;
+}
+
+.custom-form-container label, .card-form-container label {
+    display: block;
+    margin-bottom: 5px;
+    color: #5a5a5a;
+}
+
+.custom-form-container td label, .card-form-container td label {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.custom-form-container .required, .card-form-container .required {
+    color: red;
+}
+
+.custom-form-container input[type="text"],
+.custom-form-container input[type="tel"],
+.custom-form-container input[type="email"],
+.custom-form-container input[type="password"],
+.custom-form-container input[type="radio"],
+.custom-form-container button,
+.card-form-container input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #dcdcdc;
+    border-radius: 3px;
+    margin-bottom: 10px;
+}
+
+.custom-form-container input[type="radio"], .card-form-container input[type="radio"] {
+    width: auto;
+    margin-right: 5px;
+}
+
+.custom-form-container input[type="radio"] + label {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.custom-form-container a {
+    color: #0073aa;
+    text-decoration: none;
+}
+
+.custom-form-container a:hover {
+    text-decoration: underline;
+}
+
+.custom-form-container input[name="first-name"], 
+.custom-form-container input[name="last-name"], 
+.custom-form-container input[name="first-kana"], 
+.custom-form-container input[name="last-kana"], 
+.custom-form-container input[name="postal_code"], 
+.custom-form-container input[name="address1"], 
+.custom-form-container input[name="id"], 
+.card-form-container input[name="expiry_month"], 
+.card-form-container input[name="expiry_year"], 
+.custom-form-container input[type="tel"], 
+.custom-form-container input[type="password"] {
+    width: 40%;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.custom-form-container input[type="text"]:last-child {
+    margin-right: 0;
+}
+
+.btn-container  {
+    width: 800px;
+    margin: 34px auto 0;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+button {
+    width: auto;
+    padding: 10px 70px;
+    font-size: 14px;
+    background: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+    margin: 10px 0;
+}
+
+button:hover {
+    background: #555;
+}
+
+

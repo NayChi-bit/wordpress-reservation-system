@@ -64,6 +64,7 @@
 				<li><a href="<?php echo get_permalink(get_page_by_path('information')->ID); ?>">Information</a></li>
 				<li><a href="<?php echo get_permalink(get_page_by_path('blog')->ID); ?>">Blog</a></li>
 				<li><a href="#">Contact</a></li>
+				<li><a href="<?php echo get_permalink(get_page_by_path('login')->ID); ?>">Login</a></li>
 				<li class="carender"><a href="#"><i class="bi bi-calendar-check-fill"></i>&nbsp;BOOKING CARENDAR</a></li>
 			</ul>
 
