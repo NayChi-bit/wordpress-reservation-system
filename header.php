@@ -2,61 +2,46 @@
 /**************************************
  * ヘーダファイル.
  **************************************/
-
 ?>
-<!DOCTYPE html>
-<html <?php language_attributes(); ?>> 
 
-<head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
 
-	<title>WEB01</title>
-	<meta content="" name="description">
-	<meta content="" name="keywords">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<!-- Favicons -->
-	<!-- CSS FILES -->
-	<?php wp_head(); ?>
-</head>
+<title>EASTWORDKER FIT</title>
+<meta content="" name="description">
+<meta content="" name="keywords">
 
-	<!-- HEADER START -->
-	<?php
-		if(is_front_page()){
-			echo '<header id="header" class="header fixed-top d-flex align-items-center">';
-		}
-		else{
-			echo '<header id="header" class="header sticky-top d-flex align-items-center">';
-		}
-	?>
+<!-- Favicons -->
+<link href="<?php bloginfo('template_url'); ?>/images/favicon.png" rel="icon">
+<link href="<?php bloginfo('template_url'); ?>/images/apple-touch-icon.png" rel="apple-touch-icon">
 
-	<div class="container-fluid d-flex align-items-center justify-content-between">
-		<a href="<?php echo home_url(); ?>" class="logo d-flex align-items-center me-auto me-xl-0">
-			<?php 
-				if(is_front_page()){
-			?>
-					<h1 class="logo"><img src="<?php bloginfo('template_url'); ?>/assets/images/logo.png" class="img-fluid"/></h1>
-			<?php
-				}else{
-			?>
-					<h1 class="logo"><img src="<?php bloginfo('template_url'); ?>/assets/images/alternate_logo.png" class="img-fluid"/></h1>
-			<?php
-				}
-			?>
-		</a>
+<!-- Google Fonts-->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 
-		<!-- NAV MENU AREA -->
-		<nav id="navmenu" class="navmenu">
-			<?php 
-				if (has_nav_menu('primary')){
-					$args = array(
-						'theme_location'    => 'primary',
-						'menu_class'        => '',
-					);
-					wp_nav_menu( $args );
-				}
-			?>
-			<i class="mobile-nav-toggle bi bi-list"></i>			
-		</nav><!-- END NAV MENU AREA -->
-	</div>
-</header><!-- END HEADER -->
+<!-- Bootstrap@5.3.3 CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<!-- Reset CSS -->
+<link href="<?php echo get_template_directory_uri() ?>/css/destyle.css" rel="stylesheet" type="text/css">
+<!-- Navbar-1 CSS -->
+<link rel="stylesheet" href="https://unpkg.com/bs-brain@2.0.3/components/navbars/navbar-1/assets/css/navbar-1.css">
+<!-- aos CSS -->
+<link href="<?php echo get_template_directory_uri() ?>/aos/aos.css" rel="stylesheet" type="text/css">
+<!-- owl CSS -->
+<link href="<?php echo get_template_directory_uri() ?>/css/owl.carousel.min.css" rel="stylesheet" type="text/css">
+<link href="<?php echo get_template_directory_uri() ?>/css/owl.theme.default.min.css" rel="stylesheet" type="text/css">
+<!-- ionicons CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/4.5.6/css/ionicons.min.css">
+<!-- Font Awesome CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<!-- Root CSS -->
+<link href="<?php echo get_template_directory_uri() ?>/css/root.css" rel="stylesheet" type="text/css">
+<!-- Style CSS -->
+<link href="<?php echo get_template_directory_uri() ?>/style.css" rel="stylesheet" type="text/css">
+<!-- index CSS -->
+<link href="<?php echo get_template_directory_uri() ?>/css/index.css" rel="stylesheet" type="text/css">
+
+<?php wp_head(); ?>

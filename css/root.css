@@ -1,0 +1,13 @@
+@charset "utf-8";
+
+
+
+
+
+/* Global Colors */
+:root {
+--main-color: #d01919;
+--button-color: #d01919;
+--button-hover-color: #931212;
+--background-color-light: rgba(208,25,25,0.05);
+}
