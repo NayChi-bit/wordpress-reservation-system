@@ -507,7 +507,7 @@ background: rgba(33, 37, 41, 0.8);
 transition: 0.3s;
 }
 
-.mobile-nav-active .navmenu>ul {
+.mobile-nav-active .navmenu ul {
 display: block;
 }
 }
@@ -886,12 +886,6 @@ float: none;
 padding-top: 4px;
 }
 }
-
-
-
-
-
-
 
 /*--------------------------------------------------------------
 ## SCROLL TOP BUTTON AREA

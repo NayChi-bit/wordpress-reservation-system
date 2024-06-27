@@ -35,23 +35,25 @@
 				</div>
 				<div class="col-lg-3 col-md-6 footer-links">
 					<h4>Our Services</h4>
-					<ul>
-						<li><i class="bx bx-chevron-right"></i> <a href="<?php echo home_url(); ?>">Home</a></li>
-						<li><i class="bx bx-chevron-right"></i> <a href="<?php echo get_permalink(get_page_by_path('about')->ID); ?>">About us</a></li>
-						<li><i class="bx bx-chevron-right"></i> <a href="<?php echo get_permalink(get_page_by_path('services')->ID); ?>">Services</a></li>
-						<li><i class="bx bx-chevron-right"></i> <a href="<?php echo get_permalink(get_page_by_path('price')->ID); ?>">Price List</a></li>
-						<li><i class="bx bx-chevron-right"></i> <a href="<?php echo get_permalink(get_page_by_path('staff')->ID); ?>">Gim Staff</a></li>
-					</ul>
+					<?php
+						if (has_nav_menu('footer1')) {
+							wp_nav_menu(array(
+								'theme_location' => 'footer1',
+								'menu_class' => '',
+							));
+						}
+					?>
 				</div>
 				<div class="col-lg-3 col-md-6 footer-links">
 					<h4>Our Services</h4>
-					<ul>
-						<li><i class="bx bx-chevron-right"></i> <a href="<?php echo get_permalink(get_page_by_path('information')->ID); ?>">Information</a></li>
-						<li><i class="bx bx-chevron-right"></i> <a href="<?php echo get_permalink(get_page_by_path('blog')->ID); ?>">Blog</a></li>
-						<li><i class="bx bx-chevron-right"></i> <a href="#">Contact</a></li>
-						<li><i class="bx bx-chevron-right"></i> <a href="<?php echo get_permalink(get_page_by_path('sitemap')->ID); ?>">Sitemap</a></li>
-						<li><i class="bx bx-chevron-right"></i> <a href="<?php echo get_permalink(get_page_by_path('privacy')->ID); ?>">Privacy policy</a></li>
-					</ul>
+					<?php
+						if (has_nav_menu('footer2')) {
+							wp_nav_menu(array(
+								'theme_location' => 'footer2',
+								'menu_class' => '',
+							));
+						}
+					?>
 				</div>
 				<div class="col-lg-3 col-md-6 footer-links">
 					<h4>Our Social Networks</h4>

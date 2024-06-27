@@ -8,7 +8,9 @@
 
 <body class="register" data-bs-spy="scroll" data-bs-target="#navmenu">
 
-<form action="" method="post">
+<?php echo do_shortcode('[user_registration_form id="153"]');?>
+<!-- <form action="" method="post" name="myForm">
+	
     <div class="custom-form-container">
         <table>
             <tr>
@@ -100,6 +102,8 @@
         <button type="submit">登録する</button>
     </div>
 
-</form>
+</form> -->
+
+</body>
 
 <?php get_footer(); ?>

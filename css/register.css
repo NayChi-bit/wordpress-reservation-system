@@ -6,8 +6,8 @@
 ## Register AREA
 --------------------------------------------------------------*/
 
-.custom-form-container, .card-form-container {
-    width: 700px;
+/* .custom-form-container, .card-form-container {
+    width: 800px;
     margin: 34px auto 0;
     padding: 20px 50px 50px;
     border-radius: 4px;
@@ -130,6 +130,10 @@ button {
 
 button:hover {
     background: #555;
+} */
+
+.register {
+    background-color: #e1e1e1;
 }
 
 

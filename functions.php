@@ -177,7 +177,7 @@
    // 投稿イメージ
    add_theme_support('post-thumbnails', array('post', 'page'));
 
-  // ページネーショ
+   // ページネーショ
    function custom_pagination($args = array()) {
       $defaults = array(
          'prev_text' => '<i class="fa fa-angle-left"></i>',
@@ -232,10 +232,10 @@
           'settings' => 'mytheme_hero_title',
           'type'     => 'text',
       ) );
-  }
-  add_action( 'customize_register', 'mytheme_customize_register' );
+   }
+   add_action( 'customize_register', 'mytheme_customize_register' );
   
-  function mytheme_customizer_live_preview() {
+   function mytheme_customizer_live_preview() {
       wp_enqueue_script(
           'mytheme-customizer',
           get_template_directory_uri() . '/assets/js/theme-customizer.js',
@@ -243,10 +243,10 @@
           null,
           true
       );
-  }
-  add_action( 'customize_preview_init', 'mytheme_customizer_live_preview' );
+   }
+   add_action( 'customize_preview_init', 'mytheme_customizer_live_preview' );
   
-  function mytheme_customizer_preview_js() {
+   function mytheme_customizer_preview_js() {
       wp_enqueue_script(
           'mytheme-customizer-preview',
           get_template_directory_uri() . '/assets/js/theme-customizer-preview.js',
@@ -254,7 +254,15 @@
           null,
           true
       );
-  }
-  add_action( 'customize_preview_init', 'mytheme_customizer_preview_js' );  
+   }
+   add_action( 'customize_preview_init', 'mytheme_customizer_preview_js' );  
 
+   function custom_theme_setup() {
+      register_nav_menus( array(
+              'primary' => esc_html__( 'Primary Menu', 'nepalbuzz' ),
+              'footer1'  => esc_html__( 'Footer Menu1', 'nepalbuzz' ),
+              'footer2'  => esc_html__( 'Footer Menu2', 'nepalbuzz' ),
+      ) );
+   }
+   add_action( 'after_setup_theme', 'custom_theme_setup' );
 ?>
