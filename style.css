@@ -290,7 +290,7 @@ margin-left: 15px;
 }
 }
 
-.nav-link {
+.navbar-nav a{
 display: block;
 padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
 font-size: var(--bs-nav-link-font-size);
@@ -303,7 +303,7 @@ transition: color .15s ease-in-out,background-color .15s ease-in-out,border-colo
 }
 
 @media (max-width: 1400px) {
-.nav-link {
+.navbar-nav a {
 display: block;
 padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
 font-size: var(--bs-nav-link-font-size);
@@ -316,12 +316,12 @@ transition: color .15s ease-in-out,background-color .15s ease-in-out,border-colo
 }
 }
 
-.nav-link:focus, .nav-link:hover {
+.navbar-nav a:focus, .navbar-nav a:hover {
 color: #FFF;
 text-decoration: underline;
 }
 @media (max-width: 1400px) {
-.nav-link:focus, .nav-link:hover {
+.navbar-nav a:focus, .navbar-nav a:hover {
 color: #000;
 }
 }
@@ -374,7 +374,7 @@ color: var(--main-color);
 background-color: var(--bs-dropdown-link-hover-bg);
 }
 
-.navbar-nav .nav-link.show  {
+.navbar-nav .navbar-nav a.show  {
 color: #FFF;
 }
 
@@ -797,6 +797,13 @@ opacity: .5;
 --------------------------------------------------------------*/
 .pager {
 margin-top: 60px;
+}
+
+/*--------------------------------------------------------------
+## Updated by NC
+--------------------------------------------------------------*/
+.menu-header-container{
+  display: flex !important;
 }
 
 

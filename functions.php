@@ -41,16 +41,12 @@
       );
 
       $args = wp_parse_args($args, $defaults);
-
-      // Get the pagination links as an array
       $links = paginate_links($args);
 
       if ($links) {
-         // Start the pagination HTML
          $pagination = '<ul class="pagination d-flex justify-content-center flex-wrap pagination-flat pagination-success">';
 
          foreach ($links as $link) {
-            // Add custom classes
             if (strpos($link, 'current') !== false) {
                   $pagination .= '<li class="page-item active">' . str_replace('page-numbers', 'page-link', $link) . '</li>';
             } else {
@@ -58,7 +54,6 @@
             }
          }
 
-         // Close the pagination HTML
          $pagination .= '</ul>';
 
          return $pagination;
@@ -114,10 +109,21 @@
 
    function custom_theme_setup() {
       register_nav_menus( array(
-              'primary' => esc_html__( 'Primary Menu', 'nepalbuzz' ),
-              'footer1'  => esc_html__( 'Footer Menu1', 'nepalbuzz' ),
-              'footer2'  => esc_html__( 'Footer Menu2', 'nepalbuzz' ),
+              'primary' => esc_html__( 'Primary Menu' ),
+              'footer1'  => esc_html__( 'Footer Menu1' ),
+              'footer2'  => esc_html__( 'Footer Menu2' ),
       ) );
    }
    add_action( 'after_setup_theme', 'custom_theme_setup' );
+
+   // ナビゲーションのaタッブのclass追加
+   function add_additional_class_on_a($classes, $item, $args)
+   {
+      if (isset($args->add_a_class)) {
+         $classes['class'] = $args->add_a_class;
+      }
+      return $classes;
+   }
+
+   add_filter('nav_menu_link_attributes', 'add_additional_class_on_a', 1, 3);
 ?>

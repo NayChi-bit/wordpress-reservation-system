@@ -52,7 +52,7 @@ Template Name: Sitemap Page Template
                 <dd class="mb-5"><div class="d-flex flex-wrap"><span class="me-5">田中&nbsp;太郎</span><span class="me-5">佐藤&nbsp;健太</span><span class="me-5">高橋&nbsp;美咲</span><span class="mt-3 mt-sm-0">伊藤&nbsp;真理</span></div></dd>
             </dl>
             <dl class="mt-5 border-bottom">
-                <dt class="fs-4 mb-3">Infomation</dt>
+                <dt class="fs-4 mb-3">Information</dt>
                 <dd class="mb-5">EASYWORKER FITのお知らせやニュースなど、最新情報を掲載しています。</dd>
             </dl>
             <dl class="mt-5 border-bottom">
