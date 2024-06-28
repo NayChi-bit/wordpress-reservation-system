@@ -153,9 +153,10 @@ Template Name: About Page Template
 	<!-- page-top START -->
 	<p id="page-top"><a href="#"><i class="fa-solid fa-arrow-up"></i></a></p>
 	<?php get_footer(); ?>
+	
 	<script>
 		// ヘッダーのスクロール制御
-		const header = document.getElementById("header");
+		const header = document.getElementById("header-under");
 		window.addEventListener('scroll', function () {
 			if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
 				header.classList.add('resize');
@@ -165,41 +166,6 @@ Template Name: About Page Template
 		});
 
 		AOS.init()
-	</script>
-
-	<script>
-		// アコーディオン制御
-		$(document).ready(function () {
-			$('.ab_accordion_header').click(function () {
-				// toggle the content
-				$(this).next('.ab_accordion_content').slideToggle(200);
-				// toggle the arrow icon
-				$(this).toggleClass('active');
-				// hide the other contents
-				$('.ab_accordion_content').not($(this).next()).slideUp(200);
-				// remove the active class from other headers
-				$('.ab_accordion_header').not($(this)).removeClass('active');
-			});
-		});
-	</script>
-
-	<script>
-		$(function () {
-			// ページトップ制御
-			var pagetop = $('#page-top');
-			pagetop.hide();
-			$(window).scroll(function () {
-				if ($(this).scrollTop() > 100) {
-					pagetop.fadeIn();
-				} else {
-					pagetop.fadeOut();
-				}
-			});
-			pagetop.click(function () {
-				$('body, html').animate({ scrollTop: 0 }, 500);
-				return false;
-			});
-		});
 	</script>
 
 </body>
