@@ -41,7 +41,5 @@
 <link href="<?php echo get_template_directory_uri() ?>/css/root.css" rel="stylesheet" type="text/css">
 <!-- Style CSS -->
 <link href="<?php echo get_template_directory_uri() ?>/style.css" rel="stylesheet" type="text/css">
-<!-- index CSS -->
-<link href="<?php echo get_template_directory_uri() ?>/css/index.css" rel="stylesheet" type="text/css">
 
 <?php wp_head(); ?>

@@ -3,6 +3,8 @@
 <head>
 
 <?php get_header(); ?>
+<!-- index CSS -->
+<link href="<?php echo get_template_directory_uri() ?>/css/index.css" rel="stylesheet" type="text/css">
 
 </head>
 
