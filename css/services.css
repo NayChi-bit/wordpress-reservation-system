@@ -8,210 +8,113 @@
 /*--------------------------------------------------------------
 ## SERVICES AREA
 --------------------------------------------------------------*/
-.price {
-background-color: #f4f4f4;
+.services div.img-area {
+    position: relative;
 }
 
-.services .service-item .title {
-font-weight: 700;
-margin-bottom: 15px;
-font-size: clamp(1.125rem, 0.852rem + 1.36vw, 1.875rem);
-line-height: 2.2rem;
+.services div.img-area::before {
+    position: absolute;
+    content: "";
+    height: 50px;
+    width: 50px;
+    background: rgb(232, 69, 69, 0.3);
+    border-radius: 50px;
+    z-index: 1;
+    bottom: -20px;
+    right: -22px;
 }
 
-.services .service-item .description {
-line-height: 24px;
-font-size: 16px;
+.services div.services-box {
+    margin-bottom: 60px;
+    border-bottom: 1px solid #CCC;
+    padding-bottom: 60px;
 }
 
-.services .service-item .icon {
-width: 493px;
-height: auto;
-position: relative;
-margin-right: 30px;
-line-height: 0;
-margin-bottom: 12px;
-}
-@media (max-width: 767px) {
-.services .service-item .icon {
-width: 100%;
-height: auto;
-position: relative;
-margin-right: 30px;
-line-height: 0;
-margin-bottom: 20px;
-}
+.services div.services-box:last-child {
+    margin-bottom: 0px;
+    border-bottom: none;
+    padding-bottom: 0px;
 }
 
-.services .service-item .icon i {
-color: rgba(var(--default-color-rgb), 0.7);
-font-size: 56px;
-transition: ease-in-out 0.3s;
-z-index: 2;
-position: relative;
+.services div.about-inner h2 {
+    font-size: clamp(1.5rem, 1.364rem + 0.68vw, 1.875rem);
+    font-weight: 600;
+    position: relative;
+    padding-left: 38px;
 }
 
-.services .service-item .icon::before {
-position: absolute;
-content: "";
-height: 40px;
-width: 40px;
-background: rgba(var(--accent-color-rgb), 0.3);
-border-radius: 50px;
-z-index: 1;
-bottom: -10px;
-right: -18px;
-transition: 0.3s;
-}
-@media (max-width: 767px) {
-.services .service-item .icon::before {
-position: absolute;
-content: "";
-height: 40px;
-width: 40px;
-background: rgba(var(--accent-color-rgb), 0.3);
-border-radius: 50px;
-z-index: 1;
-bottom: -18px;
-right: -6px;
-transition: 0.3s;
-}
+.services div.about-inner h2 i.fa-regular.fa-circle-dot {
+    color: var(--main-color);
+    position: absolute;
+    left: 0;
+    top: 4px;
 }
 
-
-
-
-
-
-/*--------------------------------------------------------------
-## SCROLLBAR AREA
---------------------------------------------------------------*/
-.custom-scrollbar-js,
-.custom-scrollbar-css {
-height: 333px;
+.services div.about-inner h3 {
+    font-size: clamp(1.25rem, 1.159rem + 0.45vw, 1.5rem);
+    font-weight: 600;
 }
 
-/* Custom Scrollbar using CSS */
-.custom-scrollbar-css {
-overflow-y: scroll;
+.services div.text-area {
+    text-align: justify;
 }
 
-/* scrollbar width */
-.custom-scrollbar-css::-webkit-scrollbar {
-width: 5px;
+.box-019 {
+    position: relative;
+    margin-top: 60px;
+    padding: 1.8em 1.5em 1em 1.5em;
+    border: 2px solid var(--main-color);
+    border-radius: 6px;
 }
 
-/* scrollbar track */
-.custom-scrollbar-css::-webkit-scrollbar-track {
-background: #eee;
+.box-019>div {
+    position: absolute;
+    top: -22px;
+    left: 10px;
+    padding: 8px 40px 10px 40px;
+    border-radius: 25px;
+    background-color: var(--main-color);
+    color: #fff;
 }
 
-/* カスタムスクロールバーのスタイル */
-.custom-scrollbar-css::-webkit-scrollbar {
-width: 12px; /* スクロールバーの幅を調整 */
+.box-019>div::before {
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 16px;
+    height: 8px;
+    background-color: var(--main-color);
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+    content: '';
 }
 
-.custom-scrollbar-css {
-scrollbar-color: #d01919 #f8f9fa; /* スクロールバーの色とトラックの色 */
-scrollbar-width: thin; /* スクロールバーの太さを調整（thinまたはauto） */
+.box-019 p {
+    margin: 0;
 }
 
-
-
-
-
-
-
-/*--------------------------------------------------------------
-## FLOW AREA
---------------------------------------------------------------*/
-.flow {
-background-color: #f4f4f4;
+.box-019 ul {
+    letter-spacing: 2px;
+    padding: 22px 10px 4px 10px;
 }
 
-.flow i.fa-solid.fa-calendar-days {
-font-size: 30px;
+.services div.box-019 ul li {
+    text-indent: -18px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    text-align: justify;
 }
 
-.flow i.fa-solid.fa-id-card {
-font-size: 30px;
+@media (max-width: 768px) {
+    .services div.box-019 ul li {
+        text-indent: -18px;
+        line-height: 1.5;
+        margin-bottom: 15px;
+    }
 }
 
-.flow i.fa-solid.fa-dumbbell {
-font-size: 30px;
+@media (max-width: 576px) {
+    .services div.img-area::before {
+        display: none;
+    }
 }
-
-.flow h1 {
-font-size: 20px;
-}
-
-.service section.service div.container.flow div.row div.col-md-3 div.d-inline-flex.align-items-center p {
-color: #CCC;
-font-size: 60px;
-font-family: "Inter Tight", sans-serif;
-}
-
-.tab-content {
-border: 1px solid #CCC;
-border-radius: 6px;
-padding: 50px 30px;
-background-color: #FFF;
-}
-
-.nav-link.active {
-background-color: #d01919 !important;
-padding: 16px;
-}
-
-.nav-link {
-background-color: #CCC;
-color: #FFF;
-padding: 16px;
-}
-
-.nav-link:hover {
-background-color: #d01919 !important;
-color: #FFF;
-}
-
-.tab-pane.fade.show h2 {
-font-size: 18px;
-font-weight: bold;
-position: relative;
-}
-
-.tab-pane.fade.show.active h2.mb-2 span {
-position: absolute;
-top: 5px;
-left: 40px;
-}
-
-h2.mb-2 i {
-color: #d01919;
-}
-
-.nav-item {
-position: relative;
-}
-
-.nav-item span {
-position: absolute;
-top: 19px;
-left: 58px;
-}
-
-/* .tab-pane要素に共通のスタイル */
-.tab-pane {
- opacity: 0;
- transition: opacity 0.5s ease-in-out;
-}
-
-/* .tab-pane.show要素に適用されるスタイル */
-.tab-pane.show {
- opacity: 1;
-}
-
-
-
-
-
