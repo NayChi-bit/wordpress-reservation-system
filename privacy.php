@@ -3,29 +3,45 @@
 Privacy ページ
 Template Name: Privacy Page Template
 *********************************/
-	get_header();
 ?>
+<!doctype html>
+<html lang="ja">
 
-<body class="privacy" data-bs-spy="scroll" data-bs-target="#navmenu">
+<head>
+	<title>Privacy｜EASTWORDKER FIT</title>
+	<?php get_header(); ?>
+	<!-- privacy CSS -->
+	<link href="<?php echo get_template_directory_uri() ?>/css/privacy.css" rel="stylesheet" type="text/css">
+</head>
 
-	<!-- PAN AREA -->
-	<nav class="pan" data-aos="fade-up" data-aos-delay="100">
+<body>
+
+	<!-- header-under START -->
+	<div id="header-under">
+
+		<?php get_template_part('includes/nav'); ?>
+
+	</div><!-- header-under END -->
+
+
+	<!-- PAN START -->
+	<nav class="pan">
 		<div class="container">
 			<ol>
-				<li><a href="<?php echo home_url(); ?>">Home</a></li>
+				<li><a href="index.html">Home</a></li>
 				<li class="current">Privacy Policy</li>
 			</ol>
 		</div>
-	</nav><!-- END PAN AREA -->
+	</nav><!-- PAN END -->
 
 
-	<!-- PRIVACY POLICY AREA -->
-	<section>
+	<!-- privacy START -->
+	<section class="privacy">
 
 		<!--  SECTION TITLE -->
-		<div class="container section-title" data-aos="fade-up" data-aos-delay="200">
-			<h2 class="mb-3">Privacy Policy</h2>
-			<h3 class="mb-4">プライバシーポリシー</h3>
+		<div class="container section-title">
+			<h1 class="mb-3">Privacy Policy</h1>
+			<h2 class="mb-4">プライバシーポリシー</h2>
 			<p>EASYWORKER FITは、お客様の個人情報を保護することを重視しています。</p>
 		</div><!-- END SECTION TITLE -->
 
@@ -53,67 +69,92 @@ Template Name: Privacy Page Template
 			<p class="mb-4">当社は、お客様の個人情報を適切に保護するために、適切な物理的、電子的、および管理的な手段を講じます。</p>
 
 			<h2 class="mb-3 headline">5. クッキーについて</h2>
-			<p class="mb-4">当社のウェブサイトは、クッキーを使用してお客様のブラウザに情報を保存する場合があります。これにより、お客様がウェブサイトを再訪問した際に、よりパーソナライズされた体験を提供できます。</p>
+			<p class="mb-4">当社のウェブサイトは、クッキーを使用してお客様のブラウザに情報を保存する場合があります。これにより、お客様がウェブサイトを再訪問した際に、よりパーソナライズされた体験を提供できます。
+			</p>
 
 			<h2 class="mb-3 headline">6. お問い合わせ先</h2>
 			<p class="mb-4">プライバシーポリシーに関するご質問やお問い合わせがある場合は、以下の連絡先までご連絡ください。</p>
-			<p >〒220‐0012&nbsp;神奈川県横浜市西区みなとみらい4-4-2&nbsp;横浜ブルーアベニュー5F</p>
+			<p>〒220‐0012&nbsp;神奈川県横浜市西区みなとみらい4-4-2&nbsp;横浜ブルーアベニュー5F</p>
 			<p>電話番号：045-264-9401 </p>
 			<p>メールアドレス：privacy@example.com</p>
 
 		</div>
-	</section><!-- END PRIVACY POLICY AREA -->
 
 
-	<!-- CONTACT AREA -->
-	<section class="contact">
-		<div class="container" data-aos="fade-up">
 
-			<!--  SECTION TITLE -->
-			<div class="container section-title" data-aos="fade-up">
-				<h2 class="mb-3">CONTACT</h2>
-				<h3 class="mb-4">お問い合わせ</h3>
-				<p>各種お問い合わせ方法や予約カレンダーのご案内になります。</p>
+	</section>
+
+
+	<!-- access START -->
+	<section class="access">
+		<div class="access-area">
+
+			<div class="container section-title">
+				<h1 class="mb-3">Access</h1>
+				<h2 class="mb-4">EASYWORKER FITのアクセス情報</h2>
+				<p>あなたにに合わせたトレーニングで、安全に楽しく、健康的な身体づくりを目指しましょう！</p>
 			</div><!-- END SECTION TITLE -->
 
-			<div class="row">
+			<div class="container mb-5">
+				<iframe
+					src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3249.7871348512713!2d139.62227112960008!3d35.460063971387584!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60185dde212a6c31%3A0x85721d07bc5c0f96!2z5qCq5byP5Lya56S-44OH44K444K_44Or44Ov44O844Kv44OV44Kp44O844K5!5e0!3m2!1sja!2sjp!4v1713507824045!5m2!1sja!2sjp"
+					width="100%" height="430" style="border:0;" allowfullscreen="" loading="lazy"
+					referrerpolicy="no-referrer-when-downgrade"></iframe>
+			</div>
 
-				<div class="col-lg-5 d-flex align-items-stretch">
-					<div class="info" data-aos="fade-up" data-aos-delay="200">
-						<div class="address">
-							<i class="bi bi-geo-alt"></i>
-							<h4>Address:</h4>
-							<p>〒220‐0012<br>
-							神奈川県横浜市西区みなとみらい4-4-2<br>
-							横浜ブルーアベニュー5F</p>
-						</div>
+			<div class="container">
+				<div class="row">
 
-						<div class="phone">
-							<i class="bi bi-phone"></i>
-							<h4>Phone:</h4>
-							<p>000-000-0000</p>
-						</div>
+					<div class="col-12 col-xl-4">
+						<dl>
+							<dt><i class="fa-solid fa-location-dot"></i>&nbsp;Address</dt>
+							<dd class="mb-3">〒220‐0012<br>
+								神奈川県横浜市西区みなとみらい4-4-2<br>
+								横浜ブルーアベニュー5F</dd>
+							<dt><i class="fa-solid fa-mobile-screen-button"></i>&nbsp;Phone</dt>
+							<dd class="mb-3">000-0000-0000</dd>
+							<dt><i class="fa-solid fa-clock"></i>&nbsp;Working Time</dt>
+							<dd>月曜日–金曜日: 11:00–22:00<br>
+								土曜日: 10:00–22:00<br>
+								日曜日：休館日 </dd>
+						</dl>
+					</div>
 
-						<div class="email">
-							<i class="bi bi-envelope"></i>
-							<h4>Contact From:</h4>
-							<p>info@example.com</p>
-						</div>
-
-						<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5158.761664648334!2d139.62605319712668!3d35.4593487695378!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60185dde212a6c31%3A0x85721d07bc5c0f96!2z5qCq5byP5Lya56S-44OH44K444K_44Or44Ov44O844Kv44OV44Kp44O844K5!5e0!3m2!1sja!2sjp!4v1709861403057!5m2!1sja!2sjp" width="100%" height="290px;" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+					<div class="col-12 col-xl-8">
+						<img src="<?php bloginfo('template_url'); ?>/images/31.png" class="img-fluid" />
+						<img src="<?php bloginfo('template_url'); ?>/images/32.png" class="img-fluid" />
 					</div>
 
 				</div>
+			</div>
 
-				<div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
-					<div class="carender text-center">
-						<h4>Booking Carender</h4>
-						<img src="images/images02.png" class="img-fluid"/> 
-					</div>
-				</div>
-
+			<div class="text-center mt-5" data-aos="zoom-in" data-aos-delay="500">
+				<p><a href="#" class="btn_01"><i class="fa-solid fa-calendar-days calendar"></i>&nbsp;BOOKING
+						CARENDAR</a></p>
 			</div>
 
 		</div>
-	</section><!-- END CONTACT AREA -->
-<?php get_footer(); ?>
+	</section>
+	<!-- access END -->
+
+	<?php get_template_part('includes/footer'); ?>
+
+	<?php get_footer(); ?>
+
+	<script>
+		// ヘッダーのスクロール制御
+		const header = document.getElementById("header-under");
+		window.addEventListener('scroll', function () {
+			if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+				header.classList.add('resize');
+			} else {
+				header.classList.remove('resize');
+			}
+		});
+
+		AOS.init()
+	</script>
+
+</body>
+
+</html>
