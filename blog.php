@@ -1,3 +1,9 @@
+<?php
+/****************************************
+ * Blogテンプレートファイル
+ * Template Name: Blog Page Template
+ ****************************************/
+?>
 <!doctype html>
 <html lang="ja">
 

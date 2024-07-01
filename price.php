@@ -1,3 +1,9 @@
+<?php
+/****************************************
+ * Priceテンプレートファイル
+ * Template Name: Price Page Template
+ ****************************************/
+?>
 <!doctype html>
 <html lang="ja">
 
