@@ -134,9 +134,6 @@ Template Name: Service Page Template
 
 	<?php get_template_part('includes/footer'); ?>
 
-
-	<!-- page-top START -->
-	<p id="page-top"><a href="#"><i class="fa-solid fa-arrow-up"></i></a></p>
 	<?php get_footer(); ?>
 	
 	<script>
