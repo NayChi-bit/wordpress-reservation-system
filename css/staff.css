@@ -6,161 +6,183 @@
 
 
 /*--------------------------------------------------------------
-## STAFF AREA
+## staff AREA
 --------------------------------------------------------------*/
-.staff div.staff-area {
-margin-bottom: clamp(3.75rem, 3.068rem + 3.41vw, 5.625rem);
+.staff div.staff-inner01 {
+padding-left: 40px;
 }
 
-.staff div.staff-area:last-child {
+.staff div.text-area dl dd {
 margin-bottom: 0px;
 }
 
-.staff .content h1 {
-font-weight: 700;
-font-size: 26px;
+@media (max-width: 1199px) {
+.staff div.staff-inner01 {
+padding-left: 0px;
+}
 }
 
-.staff dt {
-font-weight: 700;
-font-size: 20px;
-margin-bottom: 2px;
-}
-
-.staff dt i {
-color: #d01919;
-}
-
-.staff dd {
-margin-bottom: .5rem;
-margin-left: 0;
-line-height: 1.6;
-}
-
-.staff div.box {
-border-top: 1px solid #CCC;
-border-bottom: 1px solid #CCC;
-padding: 20px 0;
-}
-
-.staff .message {
-padding: 0.25em 0.5em 0.28em;
-color: #494949;
-background: transparent;
-border-left: solid 5px #d01919;
-font-size: 26px;
-font-weight: bold;
-margin-top: 30px;
-margin-bottom: 16px;
-}
-
-.staff p {
-line-height: 1.6;
-}
-
-.staff  a.btn_01 {
+.staff div.staff-inner01 h2 {
+font-size: clamp(1.5rem, 1.318rem + 0.91vw, 2rem);
 margin-bottom: 30px;
-}
-
-.staff-area  div.staff-img img {
-max-width: 100%;
-height: auto;
-box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
-padding: 5px;
-}
-
-.staff div.social {
-margin-top: 12px;
-display: flex;
-align-items: center;
-justify-content: center;
-}
-
-.staff div.social a {
-transition: ease-in-out 0.3s;
-display: flex;
-align-items: center;
-justify-content: center;
-border-radius: 50px;
-width: 32px;
-height: 32px;
-background: rgba(var(--accent-color-rgb), 0.05);
-margin-right: 10px;
-}
-
-.staff div.social a:hover {
-transition: ease-in-out 0.3s;
-display: flex;
-align-items: center;
-justify-content: center;
-border-radius: 50px;
-width: 32px;
-height: 32px;
-background: #d01919;
-margin-right: 10px;
-}
-
-.staff div.social a i {
-color: #d01919;
-font-size: 16px;
-margin: 0 2px;
-}
-
-.staff div.social a i:hover {
-color: #FFF;
-}
-
-
-
-
-
-
-
-/*--------------------------------------------------------------
-## BALLOON AREA
---------------------------------------------------------------*/
-.balloon-002 {
+font-weight: 600;
 display: flex;
 position: relative;
-margin-top: 15px;
-padding: 30px 20px;
-border-radius: 5px;
-background-color: #f4f4f4;
-color: #333333;
 }
 
-.balloon-002::before {
-position: absolute;
-top: -15px;
-width: 30px;
-height: 15px;
-background-color: #f4f4f4;
-clip-path: polygon(50% 0, 0 100%, 100% 100%);
-content: '';
+.staff div.staff-inner02 {
+padding-right: 40px;
+}
+@media (max-width: 576px) {
+.staff div.staff-inner02 {
+padding-right: 0px;
+}
 }
 
-.about div.container div.row.align-items-xl-center.gy-5 div.col-12.content div.row.py-3 div.col-12.col-md-4.mb-3.mb-md-0.aos-init.aos-animate img {
+.staff div.staff-inner02 h2 {
+font-size: clamp(1.5rem, 1.318rem + 0.91vw, 2rem);
+margin-bottom: 30px;
+font-weight: 600;
+display: flex;
+position: relative;
+}
+
+
+.staff .icon-boxes div img {
 max-width: 100%;
 height: auto;
 box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
 padding: 5px;
 }
-
-.heading01 {
-  padding: 0.25em 0.5em 0.28em;
-  color: #494949;
-  background: transparent;
-  border-left: solid 5px #d01919;
-  font-size: 18px;
-  font-weight: bold;
+.staff div.staff-inner01 h2 {
+font-size: clamp(1.5rem, 1.318rem + 0.91vw, 2rem);
+margin-bottom: 30px;
+font-weight: 600;
+display: flex;
+position: relative;
 }
 
+.staff div.staff-inner h2 a {
+height: 36px;
+width: 36px;
+border-radius: 50%;
+display: flex;
+justify-content: center;
+align-items: center;
+background: var(--button-color);
+text-decoration: none;
+color: #fff;
+text-align: center;
+opacity: 0.9;
+transition: all .3s ease;
+margin-right: 10px;
+font-size: 16px;
+}
 
+.staff div.staff-inner h2 a:hover {
+height: 36px;
+width: 36px;
+border-radius: 50%;
+display: flex;
+justify-content: center;
+align-items: center;
+text-decoration: none;
+color: #fff;
+text-align: center;
+opacity: 0.9;
+transition: all .3s ease;
+margin-right: 10px;
+font-size: 16px;
+background: var(--button-hover-color);
+}
 
+.staff div.staff-inner h2 span.social-icon {
+display: flex;
+margin-left: 15px;
+position: absolute;
+left: 138px;
+top: 20px;
+}
 
+.staff div.text-area p {
+line-height: 1.6;
+}
 
+.text-with-line {
+position: relative;
+display: inline-block;
+padding-top: 16px;
+}
 
+.text-with-line::before {
+content: '';
+position: absolute;
+top: 0;
+width: 50px;
+height: 2px;
+background-color: var(--main-color);
+left: 0;
+}
 
+.staff div.text-area h3 {
+font-size: 20px;
+font-weight: 600;
+margin: 20px 0;
+}
 
+.staff div.staff-area {
+margin-bottom: 60px;
+}
 
+.staff div.box dl dt.headline {
+font-size: 20px;
+}
 
+.staff div.box dl dt.headline i.fa-solid.fa-square-check {
+color: var(--main-color);
+}
+
+.staff div.access-area {
+margin-top: clamp(1.875rem, 1.193rem + 3.41vw, 3.75rem);
+}
+
+.staff div.access-area h1.access {
+font-weight: 600;
+font-size: clamp(1.375rem, 1.33rem + 0.23vw, 1.5rem);
+}
+
+.staff div.row.access-area div.col-12.col-xl-4.mb-4 dl dt {
+font-size: 18px;
+}
+
+.staff div.row.access-area div.col-12.col-xl-4.mb-4 dl dt i {
+color: var(--main-color);
+}
+
+.staff div.about-inner01 {
+padding-left: 40px;
+}
+
+.staff div.about-inner02 {
+padding-right: 40px;
+}
+
+.staff span.social-icon {
+margin-left: 24px;
+}
+
+.staff span.social-icon a {
+color: #d01919;
+}
+
+.staff span.social-icon a:hover {
+color: var(--button-hover-color);
+}
+
+staff div.text-area dl dd {
+margin-bottom: 0px;
+}
+
+.staff div.text-area p {
+text-align: justify;
+}
