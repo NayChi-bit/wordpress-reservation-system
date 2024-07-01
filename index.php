@@ -471,7 +471,7 @@
       <div class="container" data-aos="fade-up" data-aos-delay="200">
         <div class="row">
 
-          <div class="col-12 col-lg-3 mb-3 mb-lg-0 d-flex align-items-stretch">
+          <!-- <div class="col-12 col-lg-3 mb-3 mb-lg-0 d-flex align-items-stretch">
             <div class="card">
               <div class="animation-img">
                 <img src="<?php bloginfo('template_url'); ?>/images/21.jpg" class="img-fluid" alt="" />
@@ -533,7 +533,76 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
+
+          <?php
+                    $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+                    $blog_query = new WP_Query(array(
+                        'post_type' => 'post',
+                        'category_name' => 'Blog',
+                        'posts_per_page' => 4,
+                        'paged' => $paged 
+                    ));
+
+                    if ($blog_query->have_posts()) :
+                        while ($blog_query->have_posts()) : $blog_query->the_post();
+                    ?>
+
+                        <div class="col-12 col-lg-3 mb-5 d-flex align-items-stretch">
+                            <div class="card">
+                                <?php if (has_post_thumbnail()) : ?>
+                                    <div class="animation-img">
+                                        <?php the_post_thumbnail('full', ['class' => 'card-img-top']); ?>
+                                    </div>
+                                <?php endif; ?>
+                                <div class="card-body d-flex flex-column">
+                                    
+                                    <?php
+                                        $categories = get_the_category(get_the_ID());
+                                        if (!empty($categories)) {
+                                            foreach ($categories as $category) {
+                                                if ($category->category_parent != 0) {
+                                                    if($category->name === 'Diet Blog'){
+                                    ?>
+                                                        <p class="calegory01 mb-2">
+                                    <?php
+                                                        echo $category->name;
+                                    ?>
+                                                        </p>
+                                    <?php
+                                                    }
+                                                    if($category->name === 'Training Blog'){
+                                    ?>
+                                                        <p class="calegory02 mb-2">
+                                    <?php
+                                                            echo $category->name;
+                                    ?>
+                                                        </p>
+                                    <?php             
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ?>
+                                    
+                                    <!-- <h3 class="card-title"><?php the_title(); ?></h3> -->
+                                    <h3 class="card-title"><a href="<?php the_permalink(); ?>"><?php the_excerpt(); ?></a></h3>
+                                    <div class="day">
+                                        <ion-icon name="calendar-clear"></ion-icon>
+                                        <p><?php echo get_the_date('Y.m.d'); ?></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                <?php
+                        endwhile;
+                ?>
+                <?php
+                        wp_reset_postdata();
+                    endif;
+                    // error_log('Pagination List : ' . $blog_query->post_count)
+                ?>
 
           <div class="text-center" data-aos="zoom-in" data-aos-delay="400">
             <p class="mt-5"><a href="<?php echo get_permalink(get_page_by_path('blog')) ?>" class="btn_02">Blog一覧へ</a></p>
@@ -544,9 +613,6 @@
     </section><!-- blog END -->
 
     <?php get_template_part('includes/footer'); ?>
-
-    <!-- page-top START -->
-    <p id="page-top"><a href="#"><i class="fa-solid fa-arrow-up"></i></a></p>
 
     <?php get_footer(); ?>
 
@@ -563,41 +629,6 @@
 
       AOS.init()
     </script>
-
-    <!-- <script>
-      // アコーディオン制御
-      $(document).ready(function () {
-        $('.ab_accordion_header').click(function () {
-          // toggle the content
-          $(this).next('.ab_accordion_content').slideToggle(200);
-          // toggle the arrow icon
-          $(this).toggleClass('active');
-          // hide the other contents
-          $('.ab_accordion_content').not($(this).next()).slideUp(200);
-          // remove the active class from other headers
-          $('.ab_accordion_header').not($(this)).removeClass('active');
-        });
-      });
-    </script>
-
-    <script>
-      $(function () {
-        // ページトップ制御
-        var pagetop = $('#page-top');
-        pagetop.hide();
-        $(window).scroll(function () {
-          if ($(this).scrollTop() > 100) {
-            pagetop.fadeIn();
-          } else {
-            pagetop.fadeOut();
-          }
-        });
-        pagetop.click(function () {
-          $('body, html').animate({ scrollTop: 0 }, 500);
-          return false;
-        });
-      });
-    </script> -->
 
   </body>
 

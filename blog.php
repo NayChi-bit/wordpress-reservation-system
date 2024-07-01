@@ -3,6 +3,8 @@
 
 <head>
     <?php get_header(); ?>
+    <!-- blog CSS -->
+    <link href="<?php echo get_template_directory_uri() ?>/css/blog.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -36,161 +38,87 @@
 
         <div class="container" data-aos="fade-up" data-aos-delay="300">
             <div class="row">
+                <?php
+                    $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+                    $blog_query = new WP_Query(array(
+                        'post_type' => 'post',
+                        'category_name' => 'Blog',
+                        'posts_per_page' => 4,
+                        'paged' => $paged 
+                    ));
 
-                <div class="col-12 col-lg-3 mb-3 mb-lg-5 d-flex align-items-stretch">
-                    <div class="card">
-                        <div class="animation-img">
-                            <img src="<?php bloginfo('template_url'); ?>/images/21.jpg" class="img-fluid" alt="" />
-                        </div>
-                        <div class="card-body d-flex flex-column">
-                            <p class="calegory01 mb-2">Diet</p>
-                            <h3 class="card-title"><a href="#">運動嫌いでも楽しく続けられる！パーソナルジムで無理なくダイエット</a></h3>
-                            <div class="day">
-                                <ion-icon name="calendar-clear"></ion-icon>
-                                <p>2024.04.01</p>
+                    if ($blog_query->have_posts()) :
+                        while ($blog_query->have_posts()) : $blog_query->the_post();
+                    ?>
+
+                        <div class="col-12 col-lg-3 mb-5 d-flex align-items-stretch">
+                            <div class="card">
+                                <?php if (has_post_thumbnail()) : ?>
+                                    <div class="animation-img">
+                                        <?php the_post_thumbnail('full', ['class' => 'card-img-top']); ?>
+                                    </div>
+                                <?php endif; ?>
+                                <div class="card-body d-flex flex-column">
+                                    
+                                    <?php
+                                        $categories = get_the_category(get_the_ID());
+                                        if (!empty($categories)) {
+                                            foreach ($categories as $category) {
+                                                if ($category->category_parent != 0) {
+                                                    if($category->name === 'Diet Blog'){
+                                    ?>
+                                                        <p class="calegory01 mb-2">
+                                    <?php
+                                                        echo $category->name;
+                                    ?>
+                                                        </p>
+                                    <?php
+                                                    }
+                                                    if($category->name === 'Training Blog'){
+                                    ?>
+                                                        <p class="calegory02 mb-2">
+                                    <?php
+                                                            echo $category->name;
+                                    ?>
+                                                        </p>
+                                    <?php             
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ?>
+                                    
+                                    <!-- <h3 class="card-title"><?php the_title(); ?></h3> -->
+                                    <h3 class="card-title"><a href="<?php the_permalink(); ?>"><?php the_excerpt(); ?></a></h3>
+                                    <!-- <a href="<?php the_permalink(); ?>" class="mt-auto align-self-start"><i class="bi bi-arrow-right me-1"></i>Read More</a> -->
+                                    <div class="day">
+                                        <ion-icon name="calendar-clear"></ion-icon>
+                                        <p><?php echo get_the_date('Y.m.d'); ?></p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
 
-                <div class="col-12 col-lg-3 mb-3 mb-lg-5 d-flex align-items-stretch">
-                    <div class="card">
-                        <div class="animation-img">
-                            <img src="<?php bloginfo('template_url'); ?>/images/22.jpg" class="card-img-top" alt="Card Image">
-                        </div>
-                        <div class="card-body d-flex flex-column">
-                            <p class="calegory02 mb-2">Training</p>
-                            <h3 class="card-title">デスクワーク中心の方必見！姿勢改善・腰痛解消のためのパーソナルトレーニング</h3>
-                            <div class="day">
-                                <ion-icon name="calendar-clear"></ion-icon>
-                                <p>2024.04.01</p>
-                            </div>
-                        </div>
-                    </div>
+                <?php
+                        endwhile;
+                ?>
+                <div class="d-flex justify-content-center mt-4" data-aos="fade-up" data-aos-delay="300">
+                    <nav>
+                        <?php
+                            echo custom_pagination(array(
+                                'total' => $blog_query->max_num_pages,
+                                'prev_text' => '<i class="fa fa-angle-left"></i>',
+                                'next_text' => '<i class="fa fa-angle-right"></i>',
+                            ));
+                        ?>
+                    </nav>
                 </div>
-
-                <div class="col-12 col-lg-3 mb-3 mb-lg-5 d-flex align-items-stretch">
-                    <div class="card">
-                        <div class="animation-img">
-                            <img src="<?php bloginfo('template_url'); ?>/images/23.jpg" class="card-img-top" alt="Card Image">
-                        </div>
-                        <div class="card-body d-flex flex-column">
-                            <p class="calegory01 mb-2">Diet</p>
-                            <h3 class="card-title">産後太り解消・体型維持のためのパーソナルトレーニング</h3>
-                            <div class="day">
-                                <ion-icon name="calendar-clear"></ion-icon>
-                                <p>2024.04.01</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-12 col-lg-3 mb-3 mb-lg-5 d-flex align-items-stretch">
-                    <div class="card">
-                        <div class="animation-img">
-                            <img src="<?php bloginfo('template_url'); ?>/images/24.jpg" class="card-img-top" alt="Card Image">
-                        </div>
-                        <div class="card-body d-flex flex-column">
-                            <p class="calegory02 mb-2">Training</p>
-                            <h3 class="card-title">運動初心者でも安心！パーソナルトレーニングで始める健康的な生活</h3>
-                            <div class="day">
-                                <ion-icon name="calendar-clear"></ion-icon>
-                                <p>2024.04.01</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-12 col-lg-3 mb-3 mb-lg-5 d-flex align-items-stretch">
-                    <div class="card">
-                        <div class="animation-img">
-                            <img src="<?php bloginfo('template_url'); ?>/images/21.jpg" class="img-fluid" alt="" />
-                        </div>
-                        <div class="card-body d-flex flex-column">
-                            <p class="calegory01 mb-2">Diet</p>
-                            <h3 class="card-title"><a href="#">運動嫌いでも楽しく続けられる！パーソナルジムで無理なくダイエット</a></h3>
-                            <div class="day">
-                                <ion-icon name="calendar-clear"></ion-icon>
-                                <p>2024.04.01</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-12 col-lg-3 mb-3 mb-lg-5 d-flex align-items-stretch">
-                    <div class="card">
-                        <div class="animation-img">
-                            <img src="<?php bloginfo('template_url'); ?>/images/22.jpg" class="card-img-top" alt="Card Image">
-                        </div>
-                        <div class="card-body d-flex flex-column">
-                            <p class="calegory02 mb-2">Training</p>
-                            <h3 class="card-title">デスクワーク中心の方必見！姿勢改善・腰痛解消のためのパーソナルトレーニング</h3>
-                            <div class="day">
-                                <ion-icon name="calendar-clear"></ion-icon>
-                                <p>2024.04.01</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-12 col-lg-3 mb-3 mb-lg-5 d-flex align-items-stretch">
-                    <div class="card">
-                        <div class="animation-img">
-                            <img src="<?php bloginfo('template_url'); ?>/images/23.jpg" class="card-img-top" alt="Card Image">
-                        </div>
-                        <div class="card-body d-flex flex-column">
-                            <p class="calegory01 mb-2">Diet</p>
-                            <h3 class="card-title">産後太り解消・体型維持のためのパーソナルトレーニング</h3>
-                            <div class="day">
-                                <ion-icon name="calendar-clear"></ion-icon>
-                                <p>2024.04.01</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-12 col-lg-3 mb-3 mb-lg-5 d-flex align-items-stretch">
-                    <div class="card">
-                        <div class="animation-img">
-                            <img src="<?php bloginfo('template_url'); ?>/images/24.jpg" class="card-img-top" alt="Card Image">
-                        </div>
-                        <div class="card-body d-flex flex-column">
-                            <p class="calegory02 mb-2">Training</p>
-                            <h3 class="card-title">運動初心者でも安心！パーソナルトレーニングで始める健康的な生活</h3>
-                            <div class="day">
-                                <ion-icon name="calendar-clear"></ion-icon>
-                                <p>2024.04.01</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
+                <?php
+                        wp_reset_postdata();
+                    endif;
+                    // error_log('Pagination List : ' . $blog_query->post_count)
+                ?>
             </div>
-
-            <div class="page-content page-container" id="page-content">
-                <div class="padding">
-                    <div class="row container d-flex justify-content-center">
-                        <div class="col-md-4 col-sm-6 grid-margin stretch-card">
-
-                            <nav>
-                                <ul
-                                    class="pagination d-flex justify-content-center flex-wrap pagination-flat pagination-success">
-                                    <li class="page-item"><a class="page-link" href="#" data-abc="true"><i
-                                                class="fa fa-angle-left"></i></a></li>
-                                    <li class="page-item active"><a class="page-link" href="#" data-abc="true">1</a>
-                                    </li>
-                                    <li class="page-item"><a class="page-link" href="#" data-abc="true">2</a></li>
-                                    <li class="page-item"><a class="page-link" href="#" data-abc="true">3</a></li>
-                                    <li class="page-item"><a class="page-link" href="#" data-abc="true">4</a></li>
-                                    <li class="page-item"><a class="page-link" href="#" data-abc="true"><i
-                                                class="fa fa-angle-right"></i></a></li>
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
         </div>
     </section><!-- END BLOG AREA -->
 
@@ -248,11 +176,7 @@
 
     <?php get_template_part('includes/footer'); ?>
 
-    <!-- page-top START -->
-    <p id="page-top"><a href="#"><i class="fa-solid fa-arrow-up"></i></a></p>
-
-
-    <?php get_footer(); ?>>
+    <?php get_footer(); ?>
 
     <script>
         // ヘッダーのスクロール制御

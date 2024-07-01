@@ -80,3 +80,6 @@
         </div>
     </div>
 </footer><!-- footer END -->
+
+<!-- page-top START -->
+<p id="page-top"><a href="#"><i class="fa-solid fa-arrow-up"></i></a></p>
