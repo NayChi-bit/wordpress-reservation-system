@@ -8,98 +8,73 @@
 /*--------------------------------------------------------------
 ## FAQ AREA
 --------------------------------------------------------------*/
-.faq {
-margin-bottom: -30px;
-}
-.faq .content h3 {
-font-weight: 400;
-font-size: 34px;
+.ab_accordion {
+width: 100%;
 }
 
-.faq .content p {
-font-size: 15px;
-color: rgba(var(--default-color-rgb), 0.7);
+.ab_accordion_content {
+display: none;
 }
 
-.faq .faq-container .faq-item {
-position: relative;
-padding: 30px 60px 30px 30px;
-margin-bottom: 20px;
-box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
-overflow: hidden;
-background-color: #fff;
-border-radius: 4px;
-}
-
-.faq .faq-container .faq-item:last-child {
-margin-bottom: 0;
-}
-
-.faq .faq-container .faq-item h3 {
-font-weight: 600;
-font-size: 18px;
-line-height: 24px;
-margin: 0 30px 0 0;
-transition: 0.3s;
+.ab_accordion_header {
 cursor: pointer;
+padding: 22px;
+font-weight: bold;
+margin-top: 10px;
+border-radius: 6px;
 display: flex;
-align-items: flex-start;
+justify-content: space-between;
+background: #f7f7f7;
 }
 
-.faq .faq-container .faq-item h3 .num {
-color: var(--accent-color);
-padding-right: 5px;
+.ab_accordion_header.active {
+background-color: var(--main-color);
+color: #fff;
+display: flex;
+justify-content: space-between;
 }
 
-.faq .faq-container .faq-item h3:hover {
-color: var(--accent-color);
+.ab_accordion_header.active p {
+padding-right: 50px;
 }
 
-.faq .faq-container .faq-item .faq-content {
-display: grid;
-grid-template-rows: 0fr;
-transition: 0.3s ease-in-out;
-visibility: hidden;
+.ab_accordion_header.active i.fas.fa-chevron-down {
+display: flex;
+align-items: center;
+}
+
+.ab_accordion_header p {
+padding-right: 50px;
+}
+
+.ab_accordion_header i.fas.fa-chevron-down {
+display: flex;
+align-items: center;
+}
+
+.ab_accordion_content {
+padding: 30px;
+animation: fade-in-up 0.3s ease-in-out;
+background: var(--background-color-light);
+border-radius: 6px;
+margin-top: 10px;
+}
+
+.ab_accordion_header.active i {
+transform: rotate(180deg);
+}
+
+@keyframes fade-in-up {
+0% {
 opacity: 0;
+transform: translateY(20px);
 }
 
-.faq .faq-container .faq-item .faq-content p {
-margin-bottom: 0;
-overflow: hidden;
-}
-
-.faq .faq-container .faq-item .faq-toggle {
-position: absolute;
-top: 36px;
-right: 20px;
-font-size: 20px;
-line-height: 0;
-transition: 0.3s;
-cursor: pointer;
-color: #000;
-}
-
-.faq .faq-container .faq-item .faq-toggle:hover {
-color: var(--accent-color);
-}
-
-.faq .faq-container .faq-active h3 {
-color: var(--accent-color);
-}
-
-.faq .faq-container .faq-active .faq-content {
-grid-template-rows: 1fr;
-visibility: visible;
+100% {
 opacity: 1;
-padding-top: 10px;
+transform: translateY(0);
 }
-
-.faq .faq-container .faq-active .faq-toggle {
-transform: rotate(90deg);
-color: var(--accent-color);
 }
-
-
 
 
 
